@@ -7,26 +7,23 @@
     <script type="text/javascript" src='./bin/jquery-2.1.1.min.js'></script>
     <script type="text/javascript" src='./bin/underscore-min.js'></script>
     <script type="text/javascript" src='./bin/backbone-min.js'></script>
-    <script type="text/javascript" src='./views/navPanel.model.js'></script>
+    <script type="text/javascript" src='./models/navPanel.model.js'></script>
     <script type="text/javascript" src='./views/navPanel.view.js'></script>
     <script type="text/javascript">
         $(document).ready(function() {
             var sections = new NAVpanel_collection([
                 {code: 'content', type: 'normal', title: 'Content', description: 'Content tree'},
-                {code: 'reports', type: 'normal', title: 'Reports', description: 'System reports'}
+                {code: 'reports', type: 'normal', title: 'Reports', description: 'System reports'},
             ]);
 
-            var nP_v = new NAVpanel_view({el: $("#nav-panel-elem")[0], collection: sections});
+            var nP_v = new NAVpanel_view({el: $("#nav-panel-elem")[0], collection: sections, user: "Jorge G. Barderas"});
             nP_v.render();
-            console.log(nP_v);
         });
     </script>
 </head>
 
 <body>
-    <div id='nav-panel-elem'>
-    hi!
-    </div>
+    <div id='nav-panel-elem'></div>
 </body>
 
 </html>
