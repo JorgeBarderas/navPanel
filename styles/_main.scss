@@ -1,0 +1,16 @@
+$font-stack:    helvetica, arial, verdana;
+$a-color: #2d2d29;
+$b-color: #215a6d;
+$c-color: #3ca2a2;
+$d-color: #92c7a3;
+$e-color: #dfece6;
+$bk-color: #fff;
+$user-color: #73185E;
+$user-content-color: #a4408d;
+
+body {
+    margin: 0; 
+    font-family: $font-stack;
+    background-color: $bk-color;
+    color: $a-color;
+}
