@@ -31,27 +31,40 @@ body {
       width: 38px;
       background-color: #3ca2a2;
       float: left; }
-  .nav-panel .nav-panel-section-user {
+  .nav-panel .nav-panel-foot {
     color: #fff;
     width: 257px;
     min-height: 38px;
     position: absolute;
     bottom: 76px; }
-    .nav-panel .nav-panel-section-user .nav-panel-section-user-title {
+    .nav-panel .nav-panel-foot .nav-panel-section-messages {
+      min-height: 38px;
+      background-color: #3ca2a2; }
+      .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-title {
+        line-height: 38px;
+        text-transform: uppercase;
+        font-size: 13px;
+        transition: all 1s;
+        padding-left: 10px; }
+      .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-tiles {
+        min-height: 20px;
+        line-height: 20px;
+        padding: 0 0 5px 25px; }
+    .nav-panel .nav-panel-foot .nav-panel-section-user .nav-panel-section-user-title {
       line-height: 38px;
       background-color: #73185E;
       font-size: 13px;
       cursor: pointer;
       transition: all 1s; }
-    .nav-panel .nav-panel-section-user .nav-panel-section-user-content {
+    .nav-panel .nav-panel-foot .nav-panel-section-user .nav-panel-section-user-content {
       display: none;
       background-color: #a4408d;
       padding: 15px;
       font-size: 12px;
       line-height: 15px; }
-    .nav-panel .nav-panel-section-user .user-expanded {
+    .nav-panel .nav-panel-foot .nav-panel-section-user .user-expanded {
       padding-left: 10px; }
-    .nav-panel .nav-panel-section-user .user-collapsed {
+    .nav-panel .nav-panel-foot .nav-panel-section-user .user-collapsed {
       padding-left: 20px; }
   .nav-panel .nav-panel-section-items {
     overflow-y: auto; }

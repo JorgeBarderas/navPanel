@@ -13,17 +13,38 @@
         $(document).ready(function() {
             var sections = new NAVpanel_collection([
                 {code: 'content', type: 'normal', title: 'Content', description: 'Content tree'},
-                {code: 'reports', type: 'normal', title: 'Reports', description: 'System reports'},
+                {code: 'reports', type: 'normal', title: 'Reports', description: 'System reports'}
             ]);
-
-            var nP_v = new NAVpanel_view({el: $("#nav-panel-elem")[0], collection: sections, user: "Jorge G. Barderas"});
+            var messages = new Messages_collection([
+                {index: 162, number: 2875, type: 'offer', title: 'Offer from A81134924', description: 'New offer received', summary: 'Offer from A81134924 to the tender PA/SMS/JGB/241214/01'},
+                {index: 42, number: 2502, type: 'deadline', title: '02/01/2015 PA/SMS/JGB/241214/01', description: 'Tender deadline', summary: '02/01/2015 is the tender PA/SMS/JGB/241214/01 deadline'}
+            ]);
+            var nP_v = new NAVpanel_view({el: $("#nav-panel-elem")[0], collection: sections, messages: messages});
             nP_v.render();
         });
     </script>
 </head>
 
 <body>
-    <div id='nav-panel-elem'></div>
+    <div id='nav-panel-elem'>
+        <div class='nav-panel-section-search'>
+            <input type='text' class='nav-panel-section-search-box' placeholder='Insert text to search' />
+            <div id='search_box' class='nav-panel-section-search-button'></div>
+        </div>
+        <div class='nav-panel-section-items'></div>
+        <div class='nav-panel-foot'>
+          <div class='nav-panel-section-messages'>
+            <div class='nav-panel-section-messages-title'>Messages</div>
+            <div class='nav-panel-section-messages-tiles'>A B C</div>
+        </div>
+        <div class='nav-panel-section-user'>
+            <div class='nav-panel-section-user-title'>Jorge G. Barderas</div>
+            <div class='nav-panel-section-user-content'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+      </div>
+  </div>
+</div>
 </body>
 
 </html>
