@@ -1,0 +1,173 @@
+@import 'main_a';
+
+.nav-panel {
+
+    width: 257px; height: 100%; padding: 38px 0; 
+    position: fixed; top: 0; left: 0; bottom: 0;
+    background-color: $e-color;
+
+    .nav-panel-section-search {
+
+        min-height: 38px; 
+        position: absolute; 
+        top: 0; 
+        width: 257px;
+
+        .nav-panel-section-search-box {
+            height: 38px; line-height: 38px; width: calc(100% - 48px); padding: 0 5px; margin: 0; border: 0; float: left;
+        }
+        
+        .nav-panel-section-search-button {
+            height: 38px; width: 38px;
+            background-color: $c-color;
+            float: left;
+        }
+    }
+    
+    .nav-panel-foot {
+
+        color: $bk-color;
+        width: 257px; min-height: 38px; position: absolute; bottom: 76px;
+
+        .nav-panel-section-messages {
+                
+            min-height: 38px;
+            background-color: $c-color;
+            display: none;
+            cursor: pointer;
+
+            .nav-panel-section-messages-title {
+            
+                line-height: 38px; text-transform: uppercase; font-size: 13px; transition: all 1s;
+                padding-left: 10px;       
+            }
+
+            .nav-panel-section-messages-tiles {
+
+                @import 'messages';
+                line-height: 20px;
+                padding-bottom: 5px;
+                transition: all .5s;
+                overflow: hidden;
+            
+                .nav-panel-section-messages-tile {
+
+                    height: 15px; width: 15px; border-radius: 10px; margin-right: 5px;
+                    float: left;
+                    border: solid 1px $bk-color;
+                }
+            }
+
+            .title-expanded {
+                background-color: transparent;
+                padding-left: 10px;}
+
+            .title-collapsed {
+                background-color: $c-color; 
+                padding-left: 20px; 
+            }
+
+            .tiles-expanded {
+                padding: 0 0 0 60px;
+                opacity: 0;
+                height: 0;
+            }
+
+            .tiles-collapsed {
+                padding: 0 0 5px 15px; 
+                opacity: 1;
+                height: 20px;
+            }
+
+            .nav-panel-section-messages-content {
+
+                display: none;
+                background-color: $bk-color;
+                color: $b-color;
+                font-size: 11px;
+
+                .nav-panel-section-messages-info {
+
+                    @import 'messages';
+                    height: 32px;
+                    padding: 5px;
+                    overflow: hidden;
+
+                    .info-title {
+
+                        font-size: 13px; font-weight: bold;
+                    }
+
+                    .info-description {
+
+                        font-size: 11px; font-style: italic;
+                    }
+
+                    .info-label {
+
+                        height: 15px; width: 15px; border-radius: 10px; margin: 0 5px 5px 0;
+                        float: left;
+                    }
+                }
+            }
+        }
+
+        .nav-panel-section-user {
+                
+            @import 'user';
+            background-color: $user-color;
+            color: $bk-color;
+
+            .nav-panel-section-user-title {
+
+                line-height: 38px;
+                font-size: 13px; cursor: pointer; transition: all 1s;
+            }
+
+            .nav-panel-section-user-content {
+
+                display: none;
+                padding: 5px 0 5px 25px; font-size: 12px; line-height: 15px;
+
+                .nav-panel-section-user-setting {
+
+                    color: $bk-color;
+                    display: block;
+                    text-decoration: none;
+                    line-height: 25px;
+                }
+            }
+
+            .title-expanded {padding-left: 10px;}
+
+            .title-collapsed {padding-left: 20px;}
+        }
+    }
+
+    .nav-panel-section-items {
+
+        overflow-y: auto;
+
+        .nav-panel-section-normal {
+
+            min-height: 38px;
+
+            .nav-panel-section-normal-title {line-height: 38px; text-transform: uppercase; font-size: 13px; cursor: pointer; transition: all 1s;}
+     
+            .nav-panel-section-normal-content {padding: 15px; font-size: 12px;}
+     
+            .title-expanded {
+                background-color: transparent; 
+                color: $c-color; 
+                padding-left: 10px;}
+
+            .title-collapsed {
+                background-color: $d-color; 
+                color: $b-color; 
+                padding-left: 20px; 
+                border-top: solid 1px $e-color;
+            }
+        }
+    }
+}
+

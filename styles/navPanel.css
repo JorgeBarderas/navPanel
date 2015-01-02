@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: helvetica, arial, verdana;
+  background-color: #fff;
+  color: #2d2d29; }
+
+.nav-panel {
+  width: 257px;
+  height: 100%;
+  padding: 38px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #dfece6; }
+  .nav-panel .nav-panel-section-search {
+    min-height: 38px;
+    position: absolute;
+    top: 0;
+    width: 257px; }
+    .nav-panel .nav-panel-section-search .nav-panel-section-search-box {
+      height: 38px;
+      line-height: 38px;
+      width: calc(100% - 48px);
+      padding: 0 5px;
+      margin: 0;
+      border: 0;
+      float: left; }
+    .nav-panel .nav-panel-section-search .nav-panel-section-search-button {
+      height: 38px;
+      width: 38px;
+      background-color: #3ca2a2;
+      float: left; }
+  .nav-panel .nav-panel-foot {
+    color: #fff;
+    width: 257px;
+    min-height: 38px;
+    position: absolute;
+    bottom: 76px; }
+    .nav-panel .nav-panel-foot .nav-panel-section-messages {
+      min-height: 38px;
+      background-color: #3ca2a2;
+      display: none;
+      cursor: pointer; }
+      .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-title {
+        line-height: 38px;
+        text-transform: uppercase;
+        font-size: 13px;
+        transition: all 1s;
+        padding-left: 10px; }
+      .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-tiles {
+        line-height: 20px;
+        padding-bottom: 5px;
+        transition: all .5s;
+        overflow: hidden; }
+        .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-tiles .message-deadline {
+          background-color: #f06b00; }
+        .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-tiles .message-offer {
+          background-color: #50d32d; }
+        .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-tiles .nav-panel-section-messages-tile {
+          height: 15px;
+          width: 15px;
+          border-radius: 10px;
+          margin-right: 5px;
+          float: left;
+          border: solid 1px #fff; }
+      .nav-panel .nav-panel-foot .nav-panel-section-messages .title-expanded {
+        background-color: transparent;
+        padding-left: 10px; }
+      .nav-panel .nav-panel-foot .nav-panel-section-messages .title-collapsed {
+        background-color: #3ca2a2;
+        padding-left: 20px; }
+      .nav-panel .nav-panel-foot .nav-panel-section-messages .tiles-expanded {
+        padding: 0 0 0 60px;
+        opacity: 0;
+        height: 0; }
+      .nav-panel .nav-panel-foot .nav-panel-section-messages .tiles-collapsed {
+        padding: 0 0 5px 15px;
+        opacity: 1;
+        height: 20px; }
+      .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content {
+        display: none;
+        background-color: #fff;
+        color: #215a6d;
+        font-size: 11px; }
+        .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info {
+          height: 32px;
+          padding: 5px;
+          overflow: hidden; }
+          .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info .message-deadline {
+            background-color: #f06b00; }
+          .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info .message-offer {
+            background-color: #50d32d; }
+          .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info .info-title {
+            font-size: 13px;
+            font-weight: bold; }
+          .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info .info-description {
+            font-size: 11px;
+            font-style: italic; }
+          .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info .info-label {
+            height: 15px;
+            width: 15px;
+            border-radius: 10px;
+            margin: 0 5px 5px 0;
+            float: left; }
+    .nav-panel .nav-panel-foot .nav-panel-section-user {
+      background-color: #73185E;
+      color: #fff; }
+      .nav-panel .nav-panel-foot .nav-panel-section-user .nav-panel-section-user-title {
+        line-height: 38px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 1s; }
+      .nav-panel .nav-panel-foot .nav-panel-section-user .nav-panel-section-user-content {
+        display: none;
+        padding: 5px 0 5px 25px;
+        font-size: 12px;
+        line-height: 15px; }
+        .nav-panel .nav-panel-foot .nav-panel-section-user .nav-panel-section-user-content .nav-panel-section-user-setting {
+          color: #fff;
+          display: block;
+          text-decoration: none;
+          line-height: 25px; }
+      .nav-panel .nav-panel-foot .nav-panel-section-user .title-expanded {
+        padding-left: 10px; }
+      .nav-panel .nav-panel-foot .nav-panel-section-user .title-collapsed {
+        padding-left: 20px; }
+  .nav-panel .nav-panel-section-items {
+    overflow-y: auto; }
+    .nav-panel .nav-panel-section-items .nav-panel-section-normal {
+      min-height: 38px; }
+      .nav-panel .nav-panel-section-items .nav-panel-section-normal .nav-panel-section-normal-title {
+        line-height: 38px;
+        text-transform: uppercase;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 1s; }
+      .nav-panel .nav-panel-section-items .nav-panel-section-normal .nav-panel-section-normal-content {
+        padding: 15px;
+        font-size: 12px; }
+      .nav-panel .nav-panel-section-items .nav-panel-section-normal .title-expanded {
+        background-color: transparent;
+        color: #3ca2a2;
+        padding-left: 10px; }
+      .nav-panel .nav-panel-section-items .nav-panel-section-normal .title-collapsed {
+        background-color: #92c7a3;
+        color: #215a6d;
+        padding-left: 20px;
+        border-top: solid 1px #dfece6; }
+
+/*# sourceMappingURL=navPanel.css.map */
