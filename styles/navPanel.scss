@@ -4,7 +4,8 @@
 
     width: 257px; height: 100%; padding: 38px 0; 
     position: fixed; top: 0; left: 0; bottom: 0;
-    background-color: $e-color;
+    background-color: nth(map-get($colors, "e"),1);
+
 
     .nav-panel-section-search {
 
@@ -18,110 +19,177 @@
         }
         
         .nav-panel-section-search-button {
+
             height: 38px; width: 38px;
-            background-color: $c-color;
+            background-color: nth(map-get($colors, "c"),1);
             float: left;
+            cursor: pointer;
+            transition: .4s;
+
+            .svg-inject {
+
+                transition: .4s;
+                height: 22px;
+                width: 22px;
+                margin: 8px;
+
+                path {
+
+                    transition: .4s;
+                    fill: white;
+                }            
+            }
+        }
+        .nav-panel-section-search-button:hover {
+
+            background-color: nth(map-get($colors, "c"),2);
+
+            .svg-inject {
+
+                height: 26px;
+                width: 26px;
+                margin: 6px;
+            }
         }
     }
     
     .nav-panel-foot {
 
-        color: $bk-color;
+        color: nth(map-get($colors, "bk"),1);
         width: 257px; min-height: 38px; position: absolute; bottom: 76px;
+        font-size: 13px;
 
-        .nav-panel-section-messages {
+        .nav-panel-section-agendas{
+
+            background-color: nth(map-get($colors, "c"),1);
+
+            .nav-panel-section-agenda {
                 
-            min-height: 38px;
-            background-color: $c-color;
-            display: none;
-            cursor: pointer;
+                min-height: 24px;
+                border-top: solid 1px nth(map-get($colors, "e"),1);
+                position: relative;
 
-            .nav-panel-section-messages-title {
-            
-                line-height: 38px; text-transform: uppercase; font-size: 13px; transition: all 1s;
-                padding-left: 10px;       
-            }
+                .nav-panel-section-messages-title {
 
-            .nav-panel-section-messages-tiles {
+                    line-height: 38px;
+                    padding-left: 10px;
+                    transition: 1s;
+                    cursor: pointer;
+                    background-color: nth(map-get($colors, "c"),1);
 
-                @import 'messages';
-                line-height: 20px;
-                padding-bottom: 5px;
-                transition: all .5s;
-                overflow: hidden;
-            
-                .nav-panel-section-messages-tile {
+                    .nav-panel-section-messages-title-button {
 
-                    height: 15px; width: 15px; border-radius: 10px; margin-right: 5px;
-                    float: left;
-                    border: solid 1px $bk-color;
+                        position: absolute;
+                        top: 0;
+                        right: 0px;
+                        width: 38px; height: 38px;
+                        transition: .4s;
+                        cursor: pointer;
+                        background-color: nth(map-get($colors, "c"),1);
+
+                        .svg-inject {
+
+                            transition: .4s;
+                            height: 22px;
+                            width: 22px;
+                            margin: 8px;
+
+                            path {
+
+                                transition: .4s;
+                                fill: white;
+                            }            
+                        }
+                    }
+                    .nav-panel-section-messages-title-button:hover {
+
+                        background-color: nth(map-get($colors, "c"),2);
+
+                        .svg-inject {
+
+                            height: 26px;
+                            width: 26px;
+                            margin: 6px;
+
+                            path {
+
+                                stroke-width: 3;
+                                stroke: white;
+                            }
+                        }
+                    }
                 }
-            }
+                .nav-panel-section-messages-title:hover {
 
-            .title-expanded {
-                background-color: transparent;
-                padding-left: 10px;}
+                    background-color: nth(map-get($colors, "c"),2);                    
+                }
 
-            .title-collapsed {
-                background-color: $c-color; 
-                padding-left: 20px; 
-            }
+                .title-expanded {
+                    padding-left: 10px;}
 
-            .tiles-expanded {
-                padding: 0 0 0 60px;
-                opacity: 0;
-                height: 0;
-            }
+                .title-collapsed {
+                    padding-left: 20px; 
+                }
 
-            .tiles-collapsed {
-                padding: 0 0 5px 15px; 
-                opacity: 1;
-                height: 20px;
-            }
+                .nav-panel-section-messages-tiles {
 
-            .nav-panel-section-messages-content {
-
-                display: none;
-                background-color: $bk-color;
-                color: $b-color;
-                font-size: 11px;
-
-                .nav-panel-section-messages-info {
-
+                    height: 5px;
+                    background-color: nth(map-get($colors, "c"),1);
                     @import 'messages';
-                    height: 32px;
-                    padding: 5px;
-                    overflow: hidden;
 
-                    .info-title {
-
-                        font-size: 13px; font-weight: bold;
-                    }
-
-                    .info-description {
-
-                        font-size: 11px; font-style: italic;
-                    }
-
-                    .info-label {
-
-                        height: 15px; width: 15px; border-radius: 10px; margin: 0 5px 5px 0;
+                    .nav-panel-section-messages-tile {
+                        height: 5px; width: 15px;
                         float: left;
                     }
                 }
+
+                .nav-panel-section-messages-content {
+
+                    display: none;
+                    background-color: nth(map-get($colors, "bk"),1);
+                    color: nth(map-get($colors, "b"),1);
+                    font-size: 11px;
+
+                    .nav-panel-section-messages-info {
+
+                        @import 'messages';
+                        height: 32px;
+                        padding: 5px;
+                        overflow: hidden;
+
+                        .info-title {
+
+                            font-size: 13px; font-weight: bold;
+                        }
+
+                        .info-description {
+
+                            font-size: 11px; font-style: italic;
+                        }
+
+                        .info-label {
+
+                            height: 15px; width: 15px; border-radius: 10px; margin: 0 5px 5px 0;
+                            float: left;
+                        }
+                    }
+                }
+
             }
+
         }
+
 
         .nav-panel-section-user {
                 
             @import 'user';
             background-color: $user-color;
-            color: $bk-color;
+            color: nth(map-get($colors, "bk"),1);
 
             .nav-panel-section-user-title {
 
                 line-height: 38px;
-                font-size: 13px; cursor: pointer; transition: all 1s;
+                cursor: pointer; transition: all 1s;
             }
 
             .nav-panel-section-user-content {
@@ -131,7 +199,7 @@
 
                 .nav-panel-section-user-setting {
 
-                    color: $bk-color;
+                    color: nth(map-get($colors, "bk"),1);
                     display: block;
                     text-decoration: none;
                     line-height: 25px;
@@ -152,20 +220,30 @@
 
             min-height: 38px;
 
-            .nav-panel-section-normal-title {line-height: 38px; text-transform: uppercase; font-size: 13px; cursor: pointer; transition: all 1s;}
+            .nav-panel-section-normal-title {
+
+                line-height: 38px; 
+                text-transform: uppercase; 
+                font-size: 13px; 
+                cursor: pointer; 
+                transition: all 1s;
+            }
      
             .nav-panel-section-normal-content {padding: 15px; font-size: 12px;}
      
             .title-expanded {
                 background-color: transparent; 
-                color: $c-color; 
+                color: nth(map-get($colors, "c"),1); 
                 padding-left: 10px;}
 
             .title-collapsed {
-                background-color: $d-color; 
-                color: $b-color; 
+                background-color: nth(map-get($colors, "d"),1); 
+                color: nth(map-get($colors, "b"),1); 
                 padding-left: 20px; 
-                border-top: solid 1px $e-color;
+                border-top: solid 1px nth(map-get($colors, "e"),1);
+            }
+            .title-collapsed:hover {
+                background-color: nth(map-get($colors, "d"),2);                 
             }
         }
     }

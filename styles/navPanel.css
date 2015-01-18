@@ -30,85 +30,123 @@ body {
       height: 38px;
       width: 38px;
       background-color: #3ca2a2;
-      float: left; }
+      float: left;
+      cursor: pointer;
+      transition: .4s; }
+      .nav-panel .nav-panel-section-search .nav-panel-section-search-button .svg-inject {
+        transition: .4s;
+        height: 22px;
+        width: 22px;
+        margin: 8px; }
+        .nav-panel .nav-panel-section-search .nav-panel-section-search-button .svg-inject path {
+          transition: .4s;
+          fill: white; }
+    .nav-panel .nav-panel-section-search .nav-panel-section-search-button:hover {
+      background-color: #48baba; }
+      .nav-panel .nav-panel-section-search .nav-panel-section-search-button:hover .svg-inject {
+        height: 26px;
+        width: 26px;
+        margin: 6px; }
   .nav-panel .nav-panel-foot {
     color: #fff;
     width: 257px;
     min-height: 38px;
     position: absolute;
-    bottom: 76px; }
-    .nav-panel .nav-panel-foot .nav-panel-section-messages {
-      min-height: 38px;
-      background-color: #3ca2a2;
-      display: none;
-      cursor: pointer; }
-      .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-title {
-        line-height: 38px;
-        text-transform: uppercase;
-        font-size: 13px;
-        transition: all 1s;
-        padding-left: 10px; }
-      .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-tiles {
-        line-height: 20px;
-        padding-bottom: 5px;
-        transition: all .5s;
-        overflow: hidden; }
-        .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-tiles .message-deadline {
-          background-color: #f06b00; }
-        .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-tiles .message-offer {
-          background-color: #50d32d; }
-        .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-tiles .nav-panel-section-messages-tile {
-          height: 15px;
-          width: 15px;
-          border-radius: 10px;
-          margin-right: 5px;
-          float: left;
-          border: solid 1px #fff; }
-      .nav-panel .nav-panel-foot .nav-panel-section-messages .title-expanded {
-        background-color: transparent;
-        padding-left: 10px; }
-      .nav-panel .nav-panel-foot .nav-panel-section-messages .title-collapsed {
-        background-color: #3ca2a2;
-        padding-left: 20px; }
-      .nav-panel .nav-panel-foot .nav-panel-section-messages .tiles-expanded {
-        padding: 0 0 0 60px;
-        opacity: 0;
-        height: 0; }
-      .nav-panel .nav-panel-foot .nav-panel-section-messages .tiles-collapsed {
-        padding: 0 0 5px 15px;
-        opacity: 1;
-        height: 20px; }
-      .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content {
-        display: none;
-        background-color: #fff;
-        color: #215a6d;
-        font-size: 11px; }
-        .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info {
-          height: 32px;
-          padding: 5px;
-          overflow: hidden; }
-          .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info .message-deadline {
+    bottom: 76px;
+    font-size: 13px; }
+    .nav-panel .nav-panel-foot .nav-panel-section-agendas {
+      background-color: #3ca2a2; }
+      .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda {
+        min-height: 24px;
+        border-top: solid 1px #dfece6;
+        position: relative; }
+        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title {
+          line-height: 38px;
+          padding-left: 10px;
+          transition: 1s;
+          cursor: pointer;
+          background-color: #3ca2a2; }
+          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button {
+            position: absolute;
+            top: 0;
+            right: 0px;
+            width: 38px;
+            height: 38px;
+            transition: .4s;
+            cursor: pointer;
+            background-color: #3ca2a2; }
+            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button .svg-inject {
+              transition: .4s;
+              height: 22px;
+              width: 22px;
+              margin: 8px; }
+              .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button .svg-inject path {
+                transition: .4s;
+                fill: white; }
+          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button:hover {
+            background-color: #48baba; }
+            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button:hover .svg-inject {
+              height: 26px;
+              width: 26px;
+              margin: 6px; }
+              .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button:hover .svg-inject path {
+                stroke-width: 3;
+                stroke: white; }
+        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title:hover {
+          background-color: #48baba; }
+        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .title-expanded {
+          padding-left: 10px; }
+        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .title-collapsed {
+          padding-left: 20px; }
+        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles {
+          height: 5px;
+          background-color: #3ca2a2; }
+          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles .message-deadline {
             background-color: #f06b00; }
-          .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info .message-offer {
+          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles .message-offer {
             background-color: #50d32d; }
-          .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info .info-title {
-            font-size: 13px;
-            font-weight: bold; }
-          .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info .info-description {
-            font-size: 11px;
-            font-style: italic; }
-          .nav-panel .nav-panel-foot .nav-panel-section-messages .nav-panel-section-messages-content .nav-panel-section-messages-info .info-label {
-            height: 15px;
+          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles .message-meeting {
+            background-color: orange; }
+          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles .message-vacations {
+            background-color: yellow; }
+          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles .nav-panel-section-messages-tile {
+            height: 5px;
             width: 15px;
-            border-radius: 10px;
-            margin: 0 5px 5px 0;
             float: left; }
+        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content {
+          display: none;
+          background-color: #fff;
+          color: #215a6d;
+          font-size: 11px; }
+          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info {
+            height: 32px;
+            padding: 5px;
+            overflow: hidden; }
+            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .message-deadline {
+              background-color: #f06b00; }
+            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .message-offer {
+              background-color: #50d32d; }
+            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .message-meeting {
+              background-color: orange; }
+            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .message-vacations {
+              background-color: yellow; }
+            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .info-title {
+              font-size: 13px;
+              font-weight: bold; }
+            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .info-description {
+              font-size: 11px;
+              font-style: italic; }
+            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .info-label {
+              height: 15px;
+              width: 15px;
+              border-radius: 10px;
+              margin: 0 5px 5px 0;
+              float: left; }
     .nav-panel .nav-panel-foot .nav-panel-section-user {
       background-color: #73185E;
       color: #fff; }
       .nav-panel .nav-panel-foot .nav-panel-section-user .nav-panel-section-user-title {
         line-height: 38px;
-        font-size: 13px;
         cursor: pointer;
         transition: all 1s; }
       .nav-panel .nav-panel-foot .nav-panel-section-user .nav-panel-section-user-content {
@@ -147,5 +185,7 @@ body {
         color: #215a6d;
         padding-left: 20px;
         border-top: solid 1px #dfece6; }
+      .nav-panel .nav-panel-section-items .nav-panel-section-normal .title-collapsed:hover {
+        background-color: #ade0bd; }
 
 /*# sourceMappingURL=navPanel.css.map */

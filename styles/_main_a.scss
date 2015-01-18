@@ -1,14 +1,16 @@
 $font-stack:    helvetica, arial, verdana;
-$a-color: #2d2d29;
-$b-color: #215a6d;
-$c-color: #3ca2a2;
-$d-color: #92c7a3;
-$e-color: #dfece6;
-$bk-color: #fff;
+$colors: ( 
+    a: (#2d2d29, #42423d), 
+    b: (#215a6d, #29758e), 
+    c: (#3ca2a2, #48baba),
+    d: (#92c7a3, #ade0bd),
+    e: (#dfece6, #c0d9ce),
+    bk: (#fff, #eee)
+);
 
 body {
     margin: 0; 
     font-family: $font-stack;
-    background-color: $bk-color;
-    color: $a-color;
+    background-color: nth(map-get($colors, "bk"),1);
+    color: nth(map-get($colors, "a"),1);
 }

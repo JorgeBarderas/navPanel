@@ -10,6 +10,14 @@ window.JST['nav/section/normal'] = _.template(
 window.JST['nav/report'] = _.template(
       "<a href='<%= url %>' class='nav-panel-section-reports-report><%= text %></a>"
 );
+window.JST['nav/section/agenda'] = _.template(
+      "<div class='nav-panel-section-messages-title'>"+
+        "<%= text %>"+
+        "<div class='nav-panel-section-messages-title-button'><img src='img/next.svg' class='svg-inject' /></div>"+
+      "</div>"+
+      "<div class='nav-panel-section-messages-tiles'></div>"+
+      "<div class='nav-panel-section-messages-content'></div>"
+);
 window.JST['nav/messages/tile'] = _.template(
       "<label class='nav-panel-section-messages-tile message-<%= type %>'></label>"
 );
@@ -47,6 +55,15 @@ var Reports_collection = Backbone.Collection.extend({
   model: Reports_model
 });
 /*MESSAGES*/
+var Agenda_model = Backbone.Model.extend({
+  id: '',
+  text: '',
+  messages: Messages_collection
+});
+var Agendas_collection = Backbone.Collection.extend({
+  model: Agenda_model
+});
+
 var Message_model = Backbone.Model.extend({
   code: '',
   index: -1,
@@ -59,7 +76,6 @@ var Message_model = Backbone.Model.extend({
     this.code = args.type+"_"+args.index+"_"+args.number;
   }
 });
-
 var Messages_collection = Backbone.Collection.extend({
   model: Message_model
 });
@@ -82,8 +98,8 @@ var NAVpanel_view = Backbone.View.extend({
   collection: NAVpanel_collection,
   reports: [],
   reports_view: null,
-  messages: [],
-  messages_view: null,
+  agendas: [],
+  agendas_views: [],
   settings: [],
   settings_view: null,
   section_views: [],
@@ -92,7 +108,7 @@ var NAVpanel_view = Backbone.View.extend({
   initialize: function(args) {
     this.userName = args.user;
     this.reports = args.reports;
-    this.messages = args.messages;
+    this.agendas = args.agendas;
     this.settings = args.settings;
   },
 
@@ -113,11 +129,13 @@ var NAVpanel_view = Backbone.View.extend({
           break;
       }
     })
-    console.log(view.section_views)
     //view.reports_view = new Reports_view({collection: view.reports, el: view.$(".nav-panel-section-reports")[0]});
     //view.reports_view.render();
-    view.messages_view = new Messages_view({collection: view.messages, el: view.$(".nav-panel-section-messages")[0]});
-    view.messages_view.render();
+    _.each(view.agendas.models,function(agenda){
+      var nA_v = new Agenda_view({model: agenda});
+      view.$el.find(".nav-panel-section-agendas").append(nA_v.render().$el);
+      view.agendas_views.push(nA_v);
+    });
     view.settings_view = new Settings_view({collection: view.settings, el: view.$(".nav-panel-section-user")[0]});
     view.settings_view.render();
     $(window).resize(function () {view.resize()});
@@ -161,6 +179,48 @@ var NAVsection_view = Backbone.View.extend({
       view.$(".nav-panel-section-normal-title").removeClass("title-collapsed").addClass("title-expanded");
     } else {
       view.$(".nav-panel-section-normal-title").removeClass("title-expanded").addClass("title-collapsed");
+    }
+  }
+
+});
+/*AGENDA VIEW*/
+var Agenda_view = Backbone.View.extend({
+
+  tagName: "div",
+  className: "nav-panel-section-agenda",
+  model: Agenda_model,
+
+  events: {
+    "click": "clickHeader"
+  },
+
+  render: function() {
+    var view = this;
+    view.$el
+        .attr("id", view.model.get("id"))
+        .addClass(view.className)
+        .append(window.JST['nav/section/agenda'](view.model.attributes));
+    view.$(".nav-panel-section-messages-title").addClass("title-collapsed");
+    var cM = view.model.get("messages");
+    if (cM.length > 0) {
+      _.each(cM, function(message) {
+        view.$(".nav-panel-section-messages-tiles").append(window.JST['nav/messages/tile'](message));
+        view.$(".nav-panel-section-messages-content").append(window.JST['nav/messages/info'](message));
+      });
+    }
+    return this;
+  },
+
+  clickHeader: function() {
+    var view = this;
+    var hidden = view.$(".nav-panel-section-messages-content").css("display") == "none";
+    view.$(".nav-panel-section-messages-content").slideToggle(function() {$(window).resize();});
+    if (hidden) {
+      view.$(".nav-panel-section-messages-title").removeClass("title-collapsed").addClass("title-expanded");
+      view.$(".nav-panel-section-messages-tiles").slideUp();
+    } else {
+      view.$(".nav-panel-section-messages-title").removeClass("title-expanded").addClass("title-collapsed");
+      view.$(".nav-panel-section-messages-tiles").slideDown();
     }
   }
 

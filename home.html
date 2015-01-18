@@ -5,15 +5,15 @@
     <title>navPanel</title>
     <link rel="stylesheet" href="./styles/navPanel.css"/>
     <script type="text/javascript" src='./bin/jquery-2.1.1.min.js'></script>
+    <script type="text/javascript" src='./bin/jquery.svginject.js'></script>
     <script type="text/javascript" src='./bin/underscore-min.js'></script>
     <script type="text/javascript" src='./bin/backbone-min.js'></script>
-    <script type="text/javascript" src='./models/navPanel.model.js'></script>
     <script type="text/javascript" src='./views/navPanel.view.js'></script>
     <script type="text/javascript">
         $(document).ready(function() {
             var sections = new NAVpanel_collection([
-                {code: 'content', type: 'normal', title: 'Content', description: 'Content tree'},
-                {code: 'reports', type: 'normal', title: 'Reports', description: 'Reports'},
+                {code: 'content', type: 'normal', title: 'Content', description: 'Content tree', id_content: 'tree-content'},
+                {code: 'reports', type: 'normal', title: 'Reports', description: 'Reports', id_content: 'reports-content'},
                 {code: 'favs', type: 'normal', title: 'Favorites', description: 'Content favs'},
                 {code: 'admin', type: 'normal', title: 'Administration', description: 'Administration items'}
             ]);
@@ -22,7 +22,7 @@
                 {id: 'rprt_forecast', text: 'Forecast', url: '/reports/forecast'},
                 {id: 'rprt_hhrr', text: 'Human resources tracking', url: '/reports/hhrr'}
             ]);
-            var messages = new Messages_collection([
+            var agendas = new Agendas_collection([
                 {id: 'procurement', text: 'e-Procurement messages', messages: [
                     {index: 162, number: 2875, type: 'offer', description: 'Offer from A81134924. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam', title: 'New offer received', summary: 'Offer from A81134924 to the tender PA/SMS/JGB/241214/01'},
                     {index: 42, number: 2502, type: 'deadline', description: '02/01/2015 PA/SMS/JGB/241214/01', title: 'Tender deadline', summary: '02/01/2015 is the tender PA/SMS/JGB/241214/01 deadline'}
@@ -43,20 +43,32 @@
                 el: $("#nav-panel-elem")[0], 
                 collection: sections,
                 reports: reports,
-                messages: messages, 
+                agendas: agendas, 
                 settings: settings
             });
             nP_v.render();
+            $('.svg-inject').svgInject();
         });
     </script>
 </head>
 
 <body>
     <div id='nav-panel-elem' class="nav-panel">
-        <div class='nav-panel-section-search'>
+        <div id='search-panel' class='nav-panel-section-search'>
             <input type='text' class='nav-panel-section-search-box' placeholder='Insert text to search' />
-            <div id='search_box' class='nav-panel-section-search-button'></div>
+            <div id='search_box' class='nav-panel-section-search-button'><img src="img/magnifying.svg" class="svg-inject" /></div>
         </div>
+        <div id='main-panel'>
+        </div>
+        <div id='foot-panel'>
+        </div>
+        <div id='tree-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+        </div>
+        <div id='reports-content'>
+            Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <!--
         <div class='nav-panel-section-items'>
             <div id='content' class='nav-panel-section-normal'>
                 <div class='nav-panel-section-normal-title'>Content</div>
@@ -71,18 +83,14 @@
                 </div>
             </div>
         </div>
+        -->
         <div class='nav-panel-foot'>
-          <div class='nav-panel-section-messages'>
-            <div class='nav-panel-section-messages-title'>Messages</div>
-            <div class='nav-panel-section-messages-tiles'></div>
-            <div class='nav-panel-section-messages-content'></div>
+            <div class='nav-panel-section-agendas'></div>
+            <div class='nav-panel-section-user'>
+                <div class='nav-panel-section-user-title'>Jorge G. Barderas</div>
+                <div class='nav-panel-section-user-content'></div>
+            </div>
         </div>
-        <div class='nav-panel-section-user'>
-            <div class='nav-panel-section-user-title'>Jorge G. Barderas</div>
-            <div class='nav-panel-section-user-content'></div>
-      </div>
-  </div>
-</div>
+    </div>
 </body>
-
 </html>
