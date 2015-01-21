@@ -163,29 +163,115 @@ body {
         padding-left: 10px; }
       .nav-panel .nav-panel-foot .nav-panel-section-user .title-collapsed {
         padding-left: 20px; }
-  .nav-panel .nav-panel-section-items {
+  .nav-panel #main-panel {
     overflow-y: auto; }
-    .nav-panel .nav-panel-section-items .nav-panel-section-normal {
+    .nav-panel #main-panel .nav-panel-section-expand {
       min-height: 38px; }
-      .nav-panel .nav-panel-section-items .nav-panel-section-normal .nav-panel-section-normal-title {
+      .nav-panel #main-panel .nav-panel-section-expand .nav-panel-section-expand-title {
         line-height: 38px;
-        text-transform: uppercase;
         font-size: 13px;
         cursor: pointer;
-        transition: all 1s; }
-      .nav-panel .nav-panel-section-items .nav-panel-section-normal .nav-panel-section-normal-content {
+        transition: all 1s;
+        position: relative; }
+        .nav-panel #main-panel .nav-panel-section-expand .nav-panel-section-expand-title .svg-inject {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 22px;
+          width: 22px;
+          margin: 8px;
+          transition: .4s; }
+          .nav-panel #main-panel .nav-panel-section-expand .nav-panel-section-expand-title .svg-inject path {
+            transition: .4s; }
+      .nav-panel #main-panel .nav-panel-section-expand .nav-panel-section-expand-content {
         padding: 15px;
         font-size: 12px; }
-      .nav-panel .nav-panel-section-items .nav-panel-section-normal .title-expanded {
+      .nav-panel #main-panel .nav-panel-section-expand .title-expanded {
         background-color: transparent;
         color: #3ca2a2;
         padding-left: 10px; }
-      .nav-panel .nav-panel-section-items .nav-panel-section-normal .title-collapsed {
+        .nav-panel #main-panel .nav-panel-section-expand .title-expanded .svg-inject {
+          transform: rotate(180deg); }
+          .nav-panel #main-panel .nav-panel-section-expand .title-expanded .svg-inject path {
+            fill: #3ca2a2; }
+      .nav-panel #main-panel .nav-panel-section-expand .title-collapsed {
         background-color: #92c7a3;
         color: #215a6d;
         padding-left: 20px;
         border-top: solid 1px #dfece6; }
-      .nav-panel .nav-panel-section-items .nav-panel-section-normal .title-collapsed:hover {
+        .nav-panel #main-panel .nav-panel-section-expand .title-collapsed .svg-inject {
+          transform: rotate(0deg); }
+          .nav-panel #main-panel .nav-panel-section-expand .title-collapsed .svg-inject path {
+            fill: #215a6d; }
+      .nav-panel #main-panel .nav-panel-section-expand .title-collapsed:hover {
         background-color: #ade0bd; }
+  .nav-panel #foot-panel {
+    overflow-y: auto;
+    color: #fff;
+    background-color: #3ca2a2;
+    width: 257px;
+    min-height: 38px;
+    position: absolute;
+    bottom: 76px;
+    font-size: 13px; }
+    .nav-panel #foot-panel .nav-panel-section {
+      border-top: solid 1px #dfece6;
+      position: relative; }
+      .nav-panel #foot-panel .nav-panel-section .nav-section-title {
+        min-height: 38px;
+        line-height: 38px;
+        cursor: pointer;
+        transition: all 1s;
+        position: relative;
+        background-color: #3ca2a2;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding-left: 10px; }
+        .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 22px;
+          width: 22px;
+          margin: 8px;
+          transition: .4s; }
+          .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject path {
+            transition: .4s;
+            fill: #fff; }
+      .nav-panel #foot-panel .nav-panel-section .nav-section-title:hover {
+        background-color: #48baba; }
+      .nav-panel #foot-panel .nav-panel-section .nav-section-title-button {
+        height: 38px;
+        width: 38px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: 1s; }
+        .nav-panel #foot-panel .nav-panel-section .nav-section-title-button .svg-inject {
+          height: 22px;
+          width: 22px;
+          margin: 8px;
+          transition: .4s; }
+          .nav-panel #foot-panel .nav-panel-section .nav-section-title-button .svg-inject path {
+            transition: .4s;
+            fill: #fff; }
+      .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:hover {
+        background-color: #48baba; }
+        .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:hover .svg-inject {
+          height: 26px;
+          width: 26px;
+          margin: 6px; }
+          .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:hover .svg-inject path {
+            stroke-width: 3;
+            stroke: white; }
+      .nav-panel #foot-panel .nav-panel-section .title-expanded .svg-inject.expand {
+        transform: rotate(180deg); }
+      .nav-panel #foot-panel .nav-panel-section .title-collapsed .svg-inject.expand {
+        transform: rotate(0deg); }
+    .nav-panel #foot-panel .nav-panel-section-expand-link .nav-panel-section-expand-link-title {
+      width: calc(100% - 48px); }
+    .nav-panel #foot-panel .nav-panel-section-user .nav-panel-section-user-title {
+      background-color: #73185E !important; }
 
 /*# sourceMappingURL=navPanel.css.map */

@@ -15,7 +15,9 @@
         width: 257px;
 
         .nav-panel-section-search-box {
-            height: 38px; line-height: 38px; width: calc(100% - 48px); padding: 0 5px; margin: 0; border: 0; float: left;
+            height: 38px; line-height: 38px; 
+            width: calc(100% - 48px); 
+            padding: 0 5px; margin: 0; border: 0; float: left;
         }
         
         .nav-panel-section-search-button {
@@ -212,39 +214,166 @@
         }
     }
 
-    .nav-panel-section-items {
+    #main-panel {
 
         overflow-y: auto;
 
-        .nav-panel-section-normal {
+        .nav-panel-section-expand {
 
             min-height: 38px;
 
-            .nav-panel-section-normal-title {
+            .nav-panel-section-expand-title {
 
                 line-height: 38px; 
-                text-transform: uppercase; 
                 font-size: 13px; 
                 cursor: pointer; 
                 transition: all 1s;
+                position: relative;
+
+                .svg-inject {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 22px;
+                    width: 22px;
+                    margin: 8px;
+                    transition: .4s;
+                    path {
+                        transition: .4s;
+                    }            
+                }
             }
      
-            .nav-panel-section-normal-content {padding: 15px; font-size: 12px;}
+            .nav-panel-section-expand-content {padding: 15px; font-size: 12px;}
      
             .title-expanded {
                 background-color: transparent; 
                 color: nth(map-get($colors, "c"),1); 
-                padding-left: 10px;}
+                padding-left: 10px;
+
+                .svg-inject {
+                    transform: rotate(180deg);
+                    path {
+                        fill: nth(map-get($colors, "c"),1);
+                    }            
+                }
+            }
 
             .title-collapsed {
                 background-color: nth(map-get($colors, "d"),1); 
                 color: nth(map-get($colors, "b"),1); 
                 padding-left: 20px; 
                 border-top: solid 1px nth(map-get($colors, "e"),1);
+
+                .svg-inject {
+
+                    transform: rotate(0deg);
+                    path {
+                        fill: nth(map-get($colors, "b"),1);
+                    }            
+                }
             }
             .title-collapsed:hover {
                 background-color: nth(map-get($colors, "d"),2);                 
             }
+        }
+    }
+
+    #foot-panel {
+
+        overflow-y: auto;
+        color: nth(map-get($colors, "bk"),1);
+        background-color: nth(map-get($colors, "c"),1);
+        width: 257px; min-height: 38px; position: absolute; bottom: 76px;
+        font-size: 13px; 
+
+        .nav-panel-section {
+            border-top: solid 1px nth(map-get($colors, "e"),1);
+            position: relative;
+            .nav-section-title {
+                min-height: 38px;
+                line-height: 38px; 
+                cursor: pointer; 
+                transition: all 1s;
+                position: relative;
+                background-color: nth(map-get($colors, "c"),1); 
+                color: nth(map-get($colors, "bk"),1);
+                text-decoration: none;
+                display: block;
+                padding-left: 10px;
+                .svg-inject {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 22px;
+                    width: 22px;
+                    margin: 8px;
+                    transition: .4s;
+                    path {
+                        transition: .4s;
+                        fill: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+            .nav-section-title:hover {
+                background-color: nth(map-get($colors, "c"),2);                 
+            }
+            .nav-section-title-button {
+                height: 38px; 
+                width: 38px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transition: 1s;
+                .svg-inject {
+                    height: 22px;
+                    width: 22px;
+                    margin: 8px;
+                    transition: .4s;
+                    path {
+                        transition: .4s;
+                        fill: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+            .nav-section-title-button:hover { 
+                background-color: nth(map-get($colors, "c"),2);                 
+                .svg-inject {
+                    height: 26px;
+                    width: 26px;
+                    margin: 6px;
+                    path {
+                        stroke-width: 3;
+                        stroke: white;
+                    }
+                }
+            }
+            .title-expanded {
+                .svg-inject.expand {
+                    transform: rotate(180deg);
+                }
+            }
+            .title-collapsed {
+                .svg-inject.expand {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+        .nav-panel-section-expand {
+            .nav-panel-section-expand-content {}
+        }
+        .nav-panel-section-expand-link {
+            .nav-panel-section-expand-link-title {
+                width: calc(100% - 48px);
+            }
+            .nav-panel-section-expand-link-content {}     
+        }
+        .nav-panel-section-user {
+            @import 'user';
+            .nav-panel-section-user-title {
+                background-color: $user-color !important;
+            }
+            .nav-panel-section-user-content {}
         }
     }
 }

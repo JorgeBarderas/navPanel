@@ -9,19 +9,26 @@
     <script type="text/javascript" src='./bin/underscore-min.js'></script>
     <script type="text/javascript" src='./bin/backbone-min.js'></script>
     <script type="text/javascript" src='./views/navPanel.view.js'></script>
+    <script type="text/javascript" src='./custom/custom.nav.js'></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            var sections = new NAVpanel_collection([
-                {code: 'content', type: 'normal', title: 'Content', description: 'Content tree', id_content: 'tree-content'},
-                {code: 'reports', type: 'normal', title: 'Reports', description: 'Reports', id_content: 'reports-content'},
-                {code: 'favs', type: 'normal', title: 'Favorites', description: 'Content favs'},
-                {code: 'admin', type: 'normal', title: 'Administration', description: 'Administration items'}
+            var main_sections = new NP_sections_collection([
+                {code: 'content', type: 'expand', title: 'Content', description: 'Content tree', id_content: 'tree-content'},
+                {code: 'reports', type: 'expand', title: 'Reports', description: 'Reports', id_content: 'reports-content'}
             ]);
+            custom.init_main_sections(main_sections);
+
+            var foot_sections = new NP_sections_collection([
+                {code: 'user', type: 'user', title: 'Jorge García Barderas', description: 'User profile', id_content: 'user-content'}
+            ]);
+            custom.init_foot_sections(foot_sections);
+            /*
             var reports = new Reports_collection([
                 {id: 'rprt_annual', text: 'Annual report', url: '/reports/annual'},
                 {id: 'rprt_forecast', text: 'Forecast', url: '/reports/forecast'},
                 {id: 'rprt_hhrr', text: 'Human resources tracking', url: '/reports/hhrr'}
             ]);
+*/
             var agendas = new Agendas_collection([
                 {id: 'procurement', text: 'e-Procurement messages', messages: [
                     {index: 162, number: 2875, type: 'offer', description: 'Offer from A81134924. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam', title: 'New offer received', summary: 'Offer from A81134924 to the tender PA/SMS/JGB/241214/01'},
@@ -41,8 +48,8 @@
             ]);
             var nP_v = new NAVpanel_view({
                 el: $("#nav-panel-elem")[0], 
-                collection: sections,
-                reports: reports,
+                main_sections: main_sections,
+                foot_sections: foot_sections,
                 agendas: agendas, 
                 settings: settings
             });
@@ -68,22 +75,30 @@
         <div id='reports-content'>
             Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
+        <div id='user-content'>
+            <ul>
+                <li><a href='#'>Profile</a></li>
+                <li><a href='#'>Options</a></li>
+                <li><a href='#'>Layout</a></li>
+                <li><a href='#'>Activity</a></li>
+                <li><a href='#'>Logout</a></li>
+            </ul>
+        </div>
         <!--
         <div class='nav-panel-section-items'>
-            <div id='content' class='nav-panel-section-normal'>
-                <div class='nav-panel-section-normal-title'>Content</div>
-                <div class='nav-panel-section-normal-content'>
+            <div id='content' class='nav-panel-section-expand'>
+                <div class='nav-panel-section-expand-title'>Content</div>
+                <div class='nav-panel-section-expand-content'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div>
             </div>
-            <div id='reports' class='nav-panel-section-normal'>
-                <div class='nav-panel-section-normal-title'>Reports</div>
-                <div class='nav-panel-section-normal-content'>
+            <div id='reports' class='nav-panel-section-expand'>
+                <div class='nav-panel-section-expand-title'>Reports</div>
+                <div class='nav-panel-section-expand-content'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div>
             </div>
         </div>
-        -->
         <div class='nav-panel-foot'>
             <div class='nav-panel-section-agendas'></div>
             <div class='nav-panel-section-user'>
@@ -91,6 +106,7 @@
                 <div class='nav-panel-section-user-content'></div>
             </div>
         </div>
+        -->
     </div>
 </body>
 </html>
