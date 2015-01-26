@@ -14,7 +14,8 @@
         $(document).ready(function() {
             var main_sections = new NP_sections_collection([
                 {code: 'content', type: 'expand', title: 'Content', description: 'Content tree', id_content: 'tree-content'},
-                {code: 'reports', type: 'expand', title: 'Reports', description: 'Reports', id_content: 'reports-content'}
+                {code: 'reports', type: 'expand', title: 'Reports', description: 'Reports', id_content: 'reports-content'},
+                {code: 'tasks', type: 'expand-refresh-info', title: 'Tasks', description: 'Workflow tasks', id_content: 'tasks-content'}
             ]);
             custom.init_main_sections(main_sections);
 
@@ -22,36 +23,10 @@
                 {code: 'user', type: 'user', title: 'Jorge García Barderas', description: 'User profile', id_content: 'user-content'}
             ]);
             custom.init_foot_sections(foot_sections);
-            /*
-            var reports = new Reports_collection([
-                {id: 'rprt_annual', text: 'Annual report', url: '/reports/annual'},
-                {id: 'rprt_forecast', text: 'Forecast', url: '/reports/forecast'},
-                {id: 'rprt_hhrr', text: 'Human resources tracking', url: '/reports/hhrr'}
-            ]);
-*/
-            var agendas = new Agendas_collection([
-                {id: 'procurement', text: 'e-Procurement messages', messages: [
-                    {index: 162, number: 2875, type: 'offer', description: 'Offer from A81134924. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam', title: 'New offer received', summary: 'Offer from A81134924 to the tender PA/SMS/JGB/241214/01'},
-                    {index: 42, number: 2502, type: 'deadline', description: '02/01/2015 PA/SMS/JGB/241214/01', title: 'Tender deadline', summary: '02/01/2015 is the tender PA/SMS/JGB/241214/01 deadline'}
-                ]},
-                {id: 'personal', text: 'Personal agenda', messages: [
-                    {index: 112, number: 3095, type: 'meeting', title: 'Team meeting', description: 'Semanal team reviewing', summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'},
-                    {index: 232, number: 3418, type: 'vacations', title: 'Free day', description: '06/01/2015 Children school party', summary: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris'},
-                    {index: 232, number: 3443, type: 'vacations', title: 'Free day', description: '21/01/2015 White week', summary: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris'}
-                ]}
-            ]);
-            var settings = new Settings_collection([
-                {id: 'sttngs_profile', url: '/user/profile', text: 'Profile', type: 'gear'},
-                {id: 'sttngs_options', url: '/user/options', text: 'Options', type: 'gear'},
-                {id: 'sttngs_layout', url: '/user/layout', text: 'Layout', type: 'gear'},
-                {id: 'sttngs_activity', url: '/user/activity', text: 'Activity', type: 'chart'}
-            ]);
             var nP_v = new NAVpanel_view({
                 el: $("#nav-panel-elem")[0], 
                 main_sections: main_sections,
-                foot_sections: foot_sections,
-                agendas: agendas, 
-                settings: settings
+                foot_sections: foot_sections
             });
             nP_v.render();
             $('.svg-inject').svgInject();
@@ -63,7 +38,7 @@
     <div id='nav-panel-elem' class="nav-panel">
         <div id='search-panel' class='nav-panel-section-search'>
             <input type='text' class='nav-panel-section-search-box' placeholder='Insert text to search' />
-            <div id='search_box' class='nav-panel-section-search-button'><img src="img/magnifying.svg" class="svg-inject" /></div>
+            <a href='#' id='search_box' class='nav-panel-section-search-button'><img src="img/magnifying.svg" class="svg-inject" /></a>
         </div>
         <div id='main-panel'>
         </div>
@@ -75,6 +50,9 @@
         <div id='reports-content'>
             Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
+        <div id='tasks-content'>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
         <div id='user-content'>
             <ul>
                 <li><a href='#'>Profile</a></li>
@@ -84,29 +62,6 @@
                 <li><a href='#'>Logout</a></li>
             </ul>
         </div>
-        <!--
-        <div class='nav-panel-section-items'>
-            <div id='content' class='nav-panel-section-expand'>
-                <div class='nav-panel-section-expand-title'>Content</div>
-                <div class='nav-panel-section-expand-content'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </div>
-            </div>
-            <div id='reports' class='nav-panel-section-expand'>
-                <div class='nav-panel-section-expand-title'>Reports</div>
-                <div class='nav-panel-section-expand-content'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </div>
-            </div>
-        </div>
-        <div class='nav-panel-foot'>
-            <div class='nav-panel-section-agendas'></div>
-            <div class='nav-panel-section-user'>
-                <div class='nav-panel-section-user-title'>Jorge G. Barderas</div>
-                <div class='nav-panel-section-user-content'></div>
-            </div>
-        </div>
-        -->
     </div>
 </body>
 </html>

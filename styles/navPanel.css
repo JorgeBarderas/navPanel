@@ -13,12 +13,13 @@ body {
   left: 0;
   bottom: 0;
   background-color: #dfece6; }
-  .nav-panel .nav-panel-section-search {
+  .nav-panel #search-panel {
     min-height: 38px;
     position: absolute;
     top: 0;
     width: 257px; }
-    .nav-panel .nav-panel-section-search .nav-panel-section-search-box {
+    .nav-panel #search-panel .nav-panel-section-search-box {
+      display: block;
       height: 38px;
       line-height: 38px;
       width: calc(100% - 48px);
@@ -26,209 +27,42 @@ body {
       margin: 0;
       border: 0;
       float: left; }
-    .nav-panel .nav-panel-section-search .nav-panel-section-search-button {
+    .nav-panel #search-panel .nav-panel-section-search-button {
       height: 38px;
       width: 38px;
       background-color: #3ca2a2;
       float: left;
       cursor: pointer;
       transition: .4s; }
-      .nav-panel .nav-panel-section-search .nav-panel-section-search-button .svg-inject {
+      .nav-panel #search-panel .nav-panel-section-search-button .svg-inject {
         transition: .4s;
         height: 22px;
         width: 22px;
         margin: 8px; }
-        .nav-panel .nav-panel-section-search .nav-panel-section-search-button .svg-inject path {
+        .nav-panel #search-panel .nav-panel-section-search-button .svg-inject path {
           transition: .4s;
           fill: white; }
-    .nav-panel .nav-panel-section-search .nav-panel-section-search-button:hover {
+    .nav-panel #search-panel .nav-panel-section-search-button:hover, .nav-panel #search-panel .nav-panel-section-search-button:focus {
       background-color: #48baba; }
-      .nav-panel .nav-panel-section-search .nav-panel-section-search-button:hover .svg-inject {
+      .nav-panel #search-panel .nav-panel-section-search-button:hover .svg-inject, .nav-panel #search-panel .nav-panel-section-search-button:focus .svg-inject {
         height: 26px;
         width: 26px;
         margin: 6px; }
-  .nav-panel .nav-panel-foot {
-    color: #fff;
-    width: 257px;
-    min-height: 38px;
-    position: absolute;
-    bottom: 76px;
-    font-size: 13px; }
-    .nav-panel .nav-panel-foot .nav-panel-section-agendas {
-      background-color: #3ca2a2; }
-      .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda {
-        min-height: 24px;
-        border-top: solid 1px #dfece6;
-        position: relative; }
-        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title {
-          line-height: 38px;
-          padding-left: 10px;
-          transition: 1s;
-          cursor: pointer;
-          background-color: #3ca2a2; }
-          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button {
-            position: absolute;
-            top: 0;
-            right: 0px;
-            width: 38px;
-            height: 38px;
-            transition: .4s;
-            cursor: pointer;
-            background-color: #3ca2a2; }
-            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button .svg-inject {
-              transition: .4s;
-              height: 22px;
-              width: 22px;
-              margin: 8px; }
-              .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button .svg-inject path {
-                transition: .4s;
-                fill: white; }
-          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button:hover {
-            background-color: #48baba; }
-            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button:hover .svg-inject {
-              height: 26px;
-              width: 26px;
-              margin: 6px; }
-              .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title .nav-panel-section-messages-title-button:hover .svg-inject path {
-                stroke-width: 3;
-                stroke: white; }
-        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-title:hover {
-          background-color: #48baba; }
-        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .title-expanded {
-          padding-left: 10px; }
-        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .title-collapsed {
-          padding-left: 20px; }
-        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles {
-          height: 5px;
-          background-color: #3ca2a2; }
-          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles .message-deadline {
-            background-color: #f06b00; }
-          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles .message-offer {
-            background-color: #50d32d; }
-          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles .message-meeting {
-            background-color: orange; }
-          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles .message-vacations {
-            background-color: yellow; }
-          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-tiles .nav-panel-section-messages-tile {
-            height: 5px;
-            width: 15px;
-            float: left; }
-        .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content {
-          display: none;
-          background-color: #fff;
-          color: #215a6d;
-          font-size: 11px; }
-          .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info {
-            height: 32px;
-            padding: 5px;
-            overflow: hidden; }
-            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .message-deadline {
-              background-color: #f06b00; }
-            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .message-offer {
-              background-color: #50d32d; }
-            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .message-meeting {
-              background-color: orange; }
-            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .message-vacations {
-              background-color: yellow; }
-            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .info-title {
-              font-size: 13px;
-              font-weight: bold; }
-            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .info-description {
-              font-size: 11px;
-              font-style: italic; }
-            .nav-panel .nav-panel-foot .nav-panel-section-agendas .nav-panel-section-agenda .nav-panel-section-messages-content .nav-panel-section-messages-info .info-label {
-              height: 15px;
-              width: 15px;
-              border-radius: 10px;
-              margin: 0 5px 5px 0;
-              float: left; }
-    .nav-panel .nav-panel-foot .nav-panel-section-user {
-      background-color: #73185E;
-      color: #fff; }
-      .nav-panel .nav-panel-foot .nav-panel-section-user .nav-panel-section-user-title {
-        line-height: 38px;
-        cursor: pointer;
-        transition: all 1s; }
-      .nav-panel .nav-panel-foot .nav-panel-section-user .nav-panel-section-user-content {
-        display: none;
-        padding: 5px 0 5px 25px;
-        font-size: 12px;
-        line-height: 15px; }
-        .nav-panel .nav-panel-foot .nav-panel-section-user .nav-panel-section-user-content .nav-panel-section-user-setting {
-          color: #fff;
-          display: block;
-          text-decoration: none;
-          line-height: 25px; }
-      .nav-panel .nav-panel-foot .nav-panel-section-user .title-expanded {
-        padding-left: 10px; }
-      .nav-panel .nav-panel-foot .nav-panel-section-user .title-collapsed {
-        padding-left: 20px; }
-  .nav-panel #main-panel {
-    overflow-y: auto; }
-    .nav-panel #main-panel .nav-panel-section-expand {
-      min-height: 38px; }
-      .nav-panel #main-panel .nav-panel-section-expand .nav-panel-section-expand-title {
-        line-height: 38px;
-        font-size: 13px;
-        cursor: pointer;
-        transition: all 1s;
-        position: relative; }
-        .nav-panel #main-panel .nav-panel-section-expand .nav-panel-section-expand-title .svg-inject {
-          position: absolute;
-          top: 0;
-          right: 0;
-          height: 22px;
-          width: 22px;
-          margin: 8px;
-          transition: .4s; }
-          .nav-panel #main-panel .nav-panel-section-expand .nav-panel-section-expand-title .svg-inject path {
-            transition: .4s; }
-      .nav-panel #main-panel .nav-panel-section-expand .nav-panel-section-expand-content {
-        padding: 15px;
-        font-size: 12px; }
-      .nav-panel #main-panel .nav-panel-section-expand .title-expanded {
-        background-color: transparent;
-        color: #3ca2a2;
-        padding-left: 10px; }
-        .nav-panel #main-panel .nav-panel-section-expand .title-expanded .svg-inject {
-          transform: rotate(180deg); }
-          .nav-panel #main-panel .nav-panel-section-expand .title-expanded .svg-inject path {
-            fill: #3ca2a2; }
-      .nav-panel #main-panel .nav-panel-section-expand .title-collapsed {
-        background-color: #92c7a3;
-        color: #215a6d;
-        padding-left: 20px;
-        border-top: solid 1px #dfece6; }
-        .nav-panel #main-panel .nav-panel-section-expand .title-collapsed .svg-inject {
-          transform: rotate(0deg); }
-          .nav-panel #main-panel .nav-panel-section-expand .title-collapsed .svg-inject path {
-            fill: #215a6d; }
-      .nav-panel #main-panel .nav-panel-section-expand .title-collapsed:hover {
-        background-color: #ade0bd; }
-  .nav-panel #foot-panel {
+  .nav-panel #main-panel, .nav-panel #foot-panel {
     overflow-y: auto;
-    color: #fff;
-    background-color: #3ca2a2;
-    width: 257px;
-    min-height: 38px;
-    position: absolute;
-    bottom: 76px;
     font-size: 13px; }
-    .nav-panel #foot-panel .nav-panel-section {
-      border-top: solid 1px #dfece6;
+    .nav-panel #main-panel .nav-panel-section, .nav-panel #foot-panel .nav-panel-section {
       position: relative; }
-      .nav-panel #foot-panel .nav-panel-section .nav-section-title {
+      .nav-panel #main-panel .nav-panel-section .nav-section-title, .nav-panel #foot-panel .nav-panel-section .nav-section-title {
         min-height: 38px;
         line-height: 38px;
         cursor: pointer;
         transition: all 1s;
         position: relative;
-        background-color: #3ca2a2;
-        color: #fff;
         text-decoration: none;
         display: block;
         padding-left: 10px; }
-        .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject {
+        .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject, .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject {
           position: absolute;
           top: 0;
           right: 0;
@@ -236,42 +70,244 @@ body {
           width: 22px;
           margin: 8px;
           transition: .4s; }
-          .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject path {
-            transition: .4s;
-            fill: #fff; }
-      .nav-panel #foot-panel .nav-panel-section .nav-section-title:hover {
-        background-color: #48baba; }
-      .nav-panel #foot-panel .nav-panel-section .nav-section-title-button {
+          .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject path, .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject path {
+            transition: .4s; }
+      .nav-panel #main-panel .nav-panel-section .nav-section-title:hover .svg-inject.next, .nav-panel #main-panel .nav-panel-section .nav-section-title:focus .svg-inject.next, .nav-panel #foot-panel .nav-panel-section .nav-section-title:hover .svg-inject.next, .nav-panel #foot-panel .nav-panel-section .nav-section-title:focus .svg-inject.next {
+        height: 26px;
+        width: 26px;
+        margin: 6px; }
+        .nav-panel #main-panel .nav-panel-section .nav-section-title:hover .svg-inject.next path, .nav-panel #main-panel .nav-panel-section .nav-section-title:focus .svg-inject.next path, .nav-panel #foot-panel .nav-panel-section .nav-section-title:hover .svg-inject.next path, .nav-panel #foot-panel .nav-panel-section .nav-section-title:focus .svg-inject.next path {
+          stroke-width: 3; }
+      .nav-panel #main-panel .nav-panel-section .nav-section-title:active .svg-inject.next, .nav-panel #foot-panel .nav-panel-section .nav-section-title:active .svg-inject.next {
+        transform: translate(5px); }
+      .nav-panel #main-panel .nav-panel-section .nav-section-title-button, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button {
         height: 38px;
         width: 38px;
         position: absolute;
         top: 0;
         right: 0;
         transition: 1s; }
-        .nav-panel #foot-panel .nav-panel-section .nav-section-title-button .svg-inject {
+        .nav-panel #main-panel .nav-panel-section .nav-section-title-button .svg-inject, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button .svg-inject {
           height: 22px;
           width: 22px;
           margin: 8px;
           transition: .4s; }
-          .nav-panel #foot-panel .nav-panel-section .nav-section-title-button .svg-inject path {
-            transition: .4s;
-            fill: #fff; }
-      .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:hover {
-        background-color: #48baba; }
-        .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:hover .svg-inject {
-          height: 26px;
-          width: 26px;
-          margin: 6px; }
-          .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:hover .svg-inject path {
-            stroke-width: 3;
-            stroke: white; }
-      .nav-panel #foot-panel .nav-panel-section .title-expanded .svg-inject.expand {
+          .nav-panel #main-panel .nav-panel-section .nav-section-title-button .svg-inject path, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button .svg-inject path {
+            transition: .4s; }
+      .nav-panel #main-panel .nav-panel-section .nav-section-title-button:hover .svg-inject, .nav-panel #main-panel .nav-panel-section .nav-section-title-button:focus .svg-inject, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:hover .svg-inject, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:focus .svg-inject {
+        height: 26px;
+        width: 26px;
+        margin: 6px; }
+        .nav-panel #main-panel .nav-panel-section .nav-section-title-button:hover .svg-inject path, .nav-panel #main-panel .nav-panel-section .nav-section-title-button:focus .svg-inject path, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:hover .svg-inject path, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:focus .svg-inject path {
+          stroke-width: 3; }
+      .nav-panel #main-panel .nav-panel-section .nav-section-title-info-button, .nav-panel #foot-panel .nav-panel-section .nav-section-title-info-button {
+        height: 38px;
+        width: 38px;
+        position: absolute;
+        top: 0;
+        right: 52px;
+        transition: 1s; }
+        .nav-panel #main-panel .nav-panel-section .nav-section-title-info-button .svg-inject, .nav-panel #foot-panel .nav-panel-section .nav-section-title-info-button .svg-inject {
+          height: 18px;
+          width: 18px;
+          margin: 10px;
+          transition: .4s; }
+          .nav-panel #main-panel .nav-panel-section .nav-section-title-info-button .svg-inject path, .nav-panel #foot-panel .nav-panel-section .nav-section-title-info-button .svg-inject path {
+            transition: .4s; }
+      .nav-panel #main-panel .nav-panel-section .nav-section-title-info-button:hover .svg-inject, .nav-panel #main-panel .nav-panel-section .nav-section-title-info-button:focus .svg-inject, .nav-panel #foot-panel .nav-panel-section .nav-section-title-info-button:hover .svg-inject, .nav-panel #foot-panel .nav-panel-section .nav-section-title-info-button:focus .svg-inject {
+        height: 26px;
+        width: 26px;
+        margin: 6px; }
+        .nav-panel #main-panel .nav-panel-section .nav-section-title-info-button:hover .svg-inject path, .nav-panel #main-panel .nav-panel-section .nav-section-title-info-button:focus .svg-inject path, .nav-panel #foot-panel .nav-panel-section .nav-section-title-info-button:hover .svg-inject path, .nav-panel #foot-panel .nav-panel-section .nav-section-title-info-button:focus .svg-inject path {
+          stroke-width: 3; }
+      .nav-panel #main-panel .nav-panel-section .nav-section-title-button:active .svg-inject, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:active .svg-inject {
+        transform: translate(5px); }
+      .nav-panel #main-panel .nav-panel-section .nav-section-title-info, .nav-panel #foot-panel .nav-panel-section .nav-section-title-info {
+        text-align: center;
+        line-height: 38px;
+        height: 38px;
+        width: 52px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: 1s; }
+      .nav-panel #main-panel .nav-panel-section .title-expanded .svg-inject.expand, .nav-panel #foot-panel .nav-panel-section .title-expanded .svg-inject.expand {
         transform: rotate(180deg); }
-      .nav-panel #foot-panel .nav-panel-section .title-collapsed .svg-inject.expand {
+      .nav-panel #main-panel .nav-panel-section .title-collapsed .svg-inject.expand, .nav-panel #foot-panel .nav-panel-section .title-collapsed .svg-inject.expand {
         transform: rotate(0deg); }
+    .nav-panel #main-panel .nav-panel-section-expand-link .nav-panel-section-expand-link-title, .nav-panel #foot-panel .nav-panel-section-expand-link .nav-panel-section-expand-link-title {
+      width: calc(100% - 48px); }
+    .nav-panel #main-panel .nav-panel-section-expand-link-tiles .nav-panel-section-expand-link-tiles-title, .nav-panel #foot-panel .nav-panel-section-expand-link-tiles .nav-panel-section-expand-link-tiles-title {
+      width: calc(100% - 48px); }
+    .nav-panel #main-panel .nav-panel-section-expand-link-tiles .nav-panel-section-expand-link-tiles-preview, .nav-panel #foot-panel .nav-panel-section-expand-link-tiles .nav-panel-section-expand-link-tiles-preview {
+      transition: .5s; }
+      .nav-panel #main-panel .nav-panel-section-expand-link-tiles .nav-panel-section-expand-link-tiles-preview .tile-preview, .nav-panel #foot-panel .nav-panel-section-expand-link-tiles .nav-panel-section-expand-link-tiles-preview .tile-preview {
+        height: 5px;
+        width: 15px;
+        float: left; }
+    .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-panel-section-expand-link-tiles-preview, .nav-panel #foot-panel .nav-panel-section-expand-link-tiles.expanded .nav-panel-section-expand-link-tiles-preview {
+      height: 0px; }
+    .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-panel-section-expand-link-tiles-preview, .nav-panel #foot-panel .nav-panel-section-expand-link-tiles.collapsed .nav-panel-section-expand-link-tiles-preview {
+      height: 5px; }
+    .nav-panel #main-panel .nav-panel-section-expand-refresh-info .nav-panel-section-expand-refresh-info-title, .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .nav-panel-section-expand-refresh-info-title {
+      width: calc(100% - 100px); }
+    .nav-panel #main-panel .nav-panel-section-expand-refresh-info .nav-section-title-info-button:active .svg-inject, .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .nav-section-title-info-button:active .svg-inject {
+      transform: rotate(360deg); }
+    .nav-panel #main-panel .nav-panel-section .panel-content, .nav-panel #foot-panel .nav-panel-section .panel-content {
+      padding: 10px; }
+  .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject.next path {
+    fill: #215a6d;
+    stroke: #215a6d; }
+  .nav-panel #main-panel .nav-panel-section .nav-section-title-button:hover, .nav-panel #main-panel .nav-panel-section .nav-section-title-button:focus {
+    background-color: #c0d9ce; }
+  .nav-panel #main-panel .nav-panel-section .nav-section-title-button:active {
+    background-color: #42423d; }
+  .nav-panel #main-panel .nav-panel-section-expand .title-expanded, .nav-panel #main-panel .nav-panel-section-expand-link .title-expanded, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-expanded, .nav-panel #main-panel .nav-panel-section-button .title-expanded, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-expanded {
+    background-color: transparent;
+    color: #3ca2a2; }
+    .nav-panel #main-panel .nav-panel-section-expand .title-expanded .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link .title-expanded .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-expanded .svg-inject path, .nav-panel #main-panel .nav-panel-section-button .title-expanded .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-expanded .svg-inject path {
+      fill: #3ca2a2; }
+  .nav-panel #main-panel .nav-panel-section-expand .title-collapsed, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed, .nav-panel #main-panel .nav-panel-section-button .title-collapsed, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed {
+    background-color: #92c7a3;
+    color: #215a6d;
+    border-top: solid 1px #dfece6; }
+    .nav-panel #main-panel .nav-panel-section-expand .title-collapsed .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed .svg-inject path, .nav-panel #main-panel .nav-panel-section-button .title-collapsed .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed .svg-inject path {
+      fill: #215a6d; }
+  .nav-panel #main-panel .nav-panel-section-expand .title-collapsed:hover, .nav-panel #main-panel .nav-panel-section-expand .title-collapsed:focus, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed:hover, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed:focus, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed:hover, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed:focus, .nav-panel #main-panel .nav-panel-section-button .title-collapsed:hover, .nav-panel #main-panel .nav-panel-section-button .title-collapsed:focus, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed:hover, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed:focus {
+    background-color: #ade0bd; }
+  .nav-panel #main-panel .nav-panel-section-expand .title-expanded:active, .nav-panel #main-panel .nav-panel-section-expand .title-collapsed:active, .nav-panel #main-panel .nav-panel-section-expand-link .title-expanded:active, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed:active, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-expanded:active, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed:active, .nav-panel #main-panel .nav-panel-section-button .title-expanded:active, .nav-panel #main-panel .nav-panel-section-button .title-collapsed:active, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-expanded:active, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed:active {
+    color: #fff;
+    background-color: #2d2d29; }
+    .nav-panel #main-panel .nav-panel-section-expand .title-expanded:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand .title-collapsed:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link .title-expanded:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-expanded:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-button .title-expanded:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-button .title-collapsed:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-expanded:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed:active .svg-inject path {
+      fill: #fff; }
+  .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title-button, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title-button {
+    background-color: transparent;
+    color: #3ca2a2; }
+    .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title-button .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title-button .svg-inject path {
+      fill: #3ca2a2;
+      stroke: #3ca2a2; }
+  .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title-button:hover, .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title-button:focus, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title-button:hover, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title-button:focus {
+    background-color: #92c7a3; }
+    .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title-button:hover .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title-button:focus .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title-button:hover .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title-button:focus .svg-inject path {
+      fill: #215a6d;
+      stroke: #215a6d; }
+  .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title-button:active, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title-button:active {
+    background-color: #2d2d29; }
+    .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title-button:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title-button:active .svg-inject path {
+      fill: #fff;
+      stroke: #fff; }
+  .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-title-button, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-title-button {
+    background-color: #92c7a3;
+    color: #215a6d;
+    border-top: solid 1px #dfece6; }
+    .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-title-button .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-title-button .svg-inject path {
+      fill: #215a6d;
+      stroke: #215a6d; }
+  .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-title-button:hover, .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-title-button:focus, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-title-button:hover, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-title-button:focus {
+    background-color: #ade0bd; }
+  .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-title-button:active, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-title-button:active {
+    background-color: #2d2d29; }
+    .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-title-button:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-title-button:active .svg-inject path {
+      fill: #fff;
+      stroke: #fff; }
+  .nav-panel #main-panel .nav-panel-section-expand-link-tiles .nav-panel-section-expand-link-tiles-preview {
+    background-color: #ade0bd; }
+  .nav-panel #main-panel .nav-panel-section-expand-refresh-info .nav-section-title-info-button .svg-inject path {
+    fill: #3ca2a2; }
+  .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button {
+    background-color: transparent;
+    color: #3ca2a2; }
+    .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button .svg-inject path {
+      fill: #3ca2a2; }
+  .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:hover, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:focus {
+    background-color: #92c7a3; }
+    .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:hover .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:focus .svg-inject path {
+      fill: #215a6d; }
+  .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:active {
+    background-color: #2d2d29; }
+    .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:active .svg-inject path {
+      fill: #fff; }
+  .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info {
+    background-color: transparent;
+    color: #3ca2a2; }
+  .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info-button {
+    background-color: #92c7a3;
+    color: #215a6d;
+    border-top: solid 1px #dfece6; }
+    .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info-button .svg-inject path {
+      fill: #215a6d; }
+  .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info-button:hover, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info-button:focus {
+    background-color: #ade0bd; }
+  .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info-button:active {
+    background-color: #2d2d29; }
+    .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info-button:active .svg-inject path {
+      fill: #fff; }
+  .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info {
+    background-color: #215a6d;
+    color: #fff;
+    border-top: solid 1px #dfece6; }
+  .nav-panel #foot-panel {
+    color: #fff;
+    background-color: #3ca2a2;
+    width: 257px;
+    min-height: 38px;
+    position: absolute;
+    bottom: 76px; }
+    .nav-panel #foot-panel .nav-panel-section {
+      border-top: solid 1px #dfece6; }
+      .nav-panel #foot-panel .nav-panel-section .nav-section-title {
+        background-color: #3ca2a2;
+        color: #fff; }
+        .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject path {
+          fill: #fff; }
+      .nav-panel #foot-panel .nav-panel-section .nav-section-title:hover, .nav-panel #foot-panel .nav-panel-section .nav-section-title:focus {
+        background-color: #48baba; }
+      .nav-panel #foot-panel .nav-panel-section .nav-section-title:active {
+        background-color: #42423d; }
+      .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject.next path {
+        fill: #fff;
+        stroke: #fff; }
+      .nav-panel #foot-panel .nav-panel-section .nav-section-title-button .svg-inject path {
+        fill: #fff; }
+      .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:hover, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:focus {
+        background-color: #48baba; }
+        .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:hover .svg-inject path, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:focus .svg-inject path {
+          stroke: white; }
+      .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:active {
+        background-color: #42423d; }
     .nav-panel #foot-panel .nav-panel-section-expand-link .nav-panel-section-expand-link-title {
       width: calc(100% - 48px); }
+    .nav-panel #foot-panel .nav-panel-section-expand-link-tiles .nav-panel-section-expand-link-tiles-preview {
+      background-color: #48baba; }
+    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .title-expanded .svg-inject path {
+      fill: #fff; }
+    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .title-collapsed:hover, .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .title-collapsed:focus {
+      background-color: #48baba; }
+    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .title-collapsed:active {
+      background-color: #42423d; }
+    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .nav-section-title-info-button .svg-inject path {
+      fill: #fff; }
+    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:hover, .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:focus {
+      background-color: #48baba; }
+    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:active {
+      background-color: #42423d; }
+      .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:active .svg-inject path {
+        fill: #fff; }
+    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info {
+      background-color: #3ca2a2; }
+    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info-button:hover, .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info-button:focus {
+      background-color: #48baba; }
+    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info-button:active {
+      background-color: #2d2d29; }
+      .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info-button:active .svg-inject path {
+        fill: #fff; }
+    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title-info {
+      background-color: #215a6d; }
     .nav-panel #foot-panel .nav-panel-section-user .nav-panel-section-user-title {
       background-color: #73185E !important; }
+    .nav-panel #foot-panel .nav-panel-section-user .nav-panel-section-user-title:hover, .nav-panel #foot-panel .nav-panel-section-user .nav-panel-section-user-title:focus {
+      background-color: #932b7b !important; }
+    .nav-panel #foot-panel .nav-panel-section-user .nav-panel-section-user-content {
+      background-color: #932b7b !important; }
 
 /*# sourceMappingURL=navPanel.css.map */

@@ -1,53 +1,41 @@
 @import 'main_a';
 
 .nav-panel {
-
     width: 257px; height: 100%; padding: 38px 0; 
     position: fixed; top: 0; left: 0; bottom: 0;
     background-color: nth(map-get($colors, "e"),1);
 
-
-    .nav-panel-section-search {
-
+    #search-panel {
         min-height: 38px; 
         position: absolute; 
         top: 0; 
         width: 257px;
-
         .nav-panel-section-search-box {
+            display: block;
             height: 38px; line-height: 38px; 
             width: calc(100% - 48px); 
             padding: 0 5px; margin: 0; border: 0; float: left;
         }
-        
         .nav-panel-section-search-button {
-
             height: 38px; width: 38px;
             background-color: nth(map-get($colors, "c"),1);
             float: left;
             cursor: pointer;
             transition: .4s;
-
             .svg-inject {
-
                 transition: .4s;
                 height: 22px;
                 width: 22px;
                 margin: 8px;
-
                 path {
-
                     transition: .4s;
                     fill: white;
                 }            
             }
         }
-        .nav-panel-section-search-button:hover {
-
+        .nav-panel-section-search-button:hover, .nav-panel-section-search-button:focus {
             background-color: nth(map-get($colors, "c"),2);
-
             .svg-inject {
-
                 height: 26px;
                 width: 26px;
                 margin: 6px;
@@ -55,240 +43,10 @@
         }
     }
     
-    .nav-panel-foot {
-
-        color: nth(map-get($colors, "bk"),1);
-        width: 257px; min-height: 38px; position: absolute; bottom: 76px;
-        font-size: 13px;
-
-        .nav-panel-section-agendas{
-
-            background-color: nth(map-get($colors, "c"),1);
-
-            .nav-panel-section-agenda {
-                
-                min-height: 24px;
-                border-top: solid 1px nth(map-get($colors, "e"),1);
-                position: relative;
-
-                .nav-panel-section-messages-title {
-
-                    line-height: 38px;
-                    padding-left: 10px;
-                    transition: 1s;
-                    cursor: pointer;
-                    background-color: nth(map-get($colors, "c"),1);
-
-                    .nav-panel-section-messages-title-button {
-
-                        position: absolute;
-                        top: 0;
-                        right: 0px;
-                        width: 38px; height: 38px;
-                        transition: .4s;
-                        cursor: pointer;
-                        background-color: nth(map-get($colors, "c"),1);
-
-                        .svg-inject {
-
-                            transition: .4s;
-                            height: 22px;
-                            width: 22px;
-                            margin: 8px;
-
-                            path {
-
-                                transition: .4s;
-                                fill: white;
-                            }            
-                        }
-                    }
-                    .nav-panel-section-messages-title-button:hover {
-
-                        background-color: nth(map-get($colors, "c"),2);
-
-                        .svg-inject {
-
-                            height: 26px;
-                            width: 26px;
-                            margin: 6px;
-
-                            path {
-
-                                stroke-width: 3;
-                                stroke: white;
-                            }
-                        }
-                    }
-                }
-                .nav-panel-section-messages-title:hover {
-
-                    background-color: nth(map-get($colors, "c"),2);                    
-                }
-
-                .title-expanded {
-                    padding-left: 10px;}
-
-                .title-collapsed {
-                    padding-left: 20px; 
-                }
-
-                .nav-panel-section-messages-tiles {
-
-                    height: 5px;
-                    background-color: nth(map-get($colors, "c"),1);
-                    @import 'messages';
-
-                    .nav-panel-section-messages-tile {
-                        height: 5px; width: 15px;
-                        float: left;
-                    }
-                }
-
-                .nav-panel-section-messages-content {
-
-                    display: none;
-                    background-color: nth(map-get($colors, "bk"),1);
-                    color: nth(map-get($colors, "b"),1);
-                    font-size: 11px;
-
-                    .nav-panel-section-messages-info {
-
-                        @import 'messages';
-                        height: 32px;
-                        padding: 5px;
-                        overflow: hidden;
-
-                        .info-title {
-
-                            font-size: 13px; font-weight: bold;
-                        }
-
-                        .info-description {
-
-                            font-size: 11px; font-style: italic;
-                        }
-
-                        .info-label {
-
-                            height: 15px; width: 15px; border-radius: 10px; margin: 0 5px 5px 0;
-                            float: left;
-                        }
-                    }
-                }
-
-            }
-
-        }
-
-
-        .nav-panel-section-user {
-                
-            @import 'user';
-            background-color: $user-color;
-            color: nth(map-get($colors, "bk"),1);
-
-            .nav-panel-section-user-title {
-
-                line-height: 38px;
-                cursor: pointer; transition: all 1s;
-            }
-
-            .nav-panel-section-user-content {
-
-                display: none;
-                padding: 5px 0 5px 25px; font-size: 12px; line-height: 15px;
-
-                .nav-panel-section-user-setting {
-
-                    color: nth(map-get($colors, "bk"),1);
-                    display: block;
-                    text-decoration: none;
-                    line-height: 25px;
-                }
-            }
-
-            .title-expanded {padding-left: 10px;}
-
-            .title-collapsed {padding-left: 20px;}
-        }
-    }
-
-    #main-panel {
-
+    #main-panel, #foot-panel {
         overflow-y: auto;
-
-        .nav-panel-section-expand {
-
-            min-height: 38px;
-
-            .nav-panel-section-expand-title {
-
-                line-height: 38px; 
-                font-size: 13px; 
-                cursor: pointer; 
-                transition: all 1s;
-                position: relative;
-
-                .svg-inject {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    height: 22px;
-                    width: 22px;
-                    margin: 8px;
-                    transition: .4s;
-                    path {
-                        transition: .4s;
-                    }            
-                }
-            }
-     
-            .nav-panel-section-expand-content {padding: 15px; font-size: 12px;}
-     
-            .title-expanded {
-                background-color: transparent; 
-                color: nth(map-get($colors, "c"),1); 
-                padding-left: 10px;
-
-                .svg-inject {
-                    transform: rotate(180deg);
-                    path {
-                        fill: nth(map-get($colors, "c"),1);
-                    }            
-                }
-            }
-
-            .title-collapsed {
-                background-color: nth(map-get($colors, "d"),1); 
-                color: nth(map-get($colors, "b"),1); 
-                padding-left: 20px; 
-                border-top: solid 1px nth(map-get($colors, "e"),1);
-
-                .svg-inject {
-
-                    transform: rotate(0deg);
-                    path {
-                        fill: nth(map-get($colors, "b"),1);
-                    }            
-                }
-            }
-            .title-collapsed:hover {
-                background-color: nth(map-get($colors, "d"),2);                 
-            }
-        }
-    }
-
-    #foot-panel {
-
-        overflow-y: auto;
-        color: nth(map-get($colors, "bk"),1);
-        background-color: nth(map-get($colors, "c"),1);
-        width: 257px; min-height: 38px; position: absolute; bottom: 76px;
         font-size: 13px; 
-
         .nav-panel-section {
-            border-top: solid 1px nth(map-get($colors, "e"),1);
             position: relative;
             .nav-section-title {
                 min-height: 38px;
@@ -296,8 +54,6 @@
                 cursor: pointer; 
                 transition: all 1s;
                 position: relative;
-                background-color: nth(map-get($colors, "c"),1); 
-                color: nth(map-get($colors, "bk"),1);
                 text-decoration: none;
                 display: block;
                 padding-left: 10px;
@@ -311,12 +67,23 @@
                     transition: .4s;
                     path {
                         transition: .4s;
-                        fill: nth(map-get($colors, "bk"),1);
                     }            
                 }
             }
-            .nav-section-title:hover {
-                background-color: nth(map-get($colors, "c"),2);                 
+            .nav-section-title:hover, .nav-section-title:focus {
+                .svg-inject.next {
+                    height: 26px;
+                    width: 26px;
+                    margin: 6px;
+                    path {
+                        stroke-width: 3;
+                    }
+                }
+            }
+            .nav-section-title:active {
+                .svg-inject.next {
+                    transform: translate(5px);
+                }
             }
             .nav-section-title-button {
                 height: 38px; 
@@ -332,21 +99,62 @@
                     transition: .4s;
                     path {
                         transition: .4s;
-                        fill: nth(map-get($colors, "bk"),1);
                     }            
                 }
             }
-            .nav-section-title-button:hover { 
-                background-color: nth(map-get($colors, "c"),2);                 
+            .nav-section-title-button:hover, .nav-section-title-button:focus { 
                 .svg-inject {
                     height: 26px;
                     width: 26px;
                     margin: 6px;
                     path {
                         stroke-width: 3;
-                        stroke: white;
                     }
                 }
+            }
+            .nav-section-title-info-button {
+                height: 38px; 
+                width: 38px;
+                position: absolute;
+                top: 0;
+                right: 52px;
+                transition: 1s;
+                .svg-inject {
+                    height: 18px;
+                    width: 18px;
+                    margin: 10px;
+                    transition: .4s;
+                    path {
+                        transition: .4s;
+                    }            
+                }
+            }
+            .nav-section-title-info-button:hover, .nav-section-title-info-button:focus { 
+                .svg-inject {
+                    height: 26px;
+                    width: 26px;
+                    margin: 6px;
+                    path {
+                        stroke-width: 3;
+                    }
+                }
+            }
+            .nav-section-title-button:active { 
+                .svg-inject {
+                    transform: translate(5px);
+                }
+            }
+            .nav-section-title-info {
+                text-align: center;
+                line-height: 38px;
+                height: 38px; 
+                width: 52px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transition: 1s;
+            }
+            .nav-section-title-info:hover { 
             }
             .title-expanded {
                 .svg-inject.expand {
@@ -368,12 +176,398 @@
             }
             .nav-panel-section-expand-link-content {}     
         }
+        .nav-panel-section-expand-link-tiles {
+            .nav-panel-section-expand-link-tiles-title {
+                width: calc(100% - 48px);
+            }
+            .nav-panel-section-expand-link-tiles-preview {
+                transition: .5s;
+                .tile-preview {
+                    height: 5px; width: 15px;
+                    float: left;
+                }
+            }     
+            .nav-panel-section-expand-link-tiles-content {}     
+        }
+        .nav-panel-section-expand-link-tiles.expanded {
+            .nav-panel-section-expand-link-tiles-preview {
+                height: 0px;
+            }     
+        }
+        .nav-panel-section-expand-link-tiles.collapsed {
+            .nav-panel-section-expand-link-tiles-preview {
+                height: 5px;
+            }     
+        }
+        .nav-panel-section-expand-refresh-info {
+            .nav-panel-section-expand-refresh-info-title {
+                width: calc(100% - 100px);
+            }
+            .nav-section-title-info-button:active {
+                .svg-inject {
+                    transform: rotate(360deg);
+                }
+            }
+            .nav-panel-section-expand-refresh-info-content {}     
+        }
+        .nav-panel-section .panel-content {
+            padding: 10px;
+        }
+    }
+
+    #main-panel {
+        .nav-panel-section {
+            .nav-section-title {
+                .svg-inject {
+                    path {
+                    }            
+                }
+            }
+            .nav-section-title {
+                .svg-inject.next {
+                    path {
+                        fill: nth(map-get($colors, "b"),1);
+                        stroke: nth(map-get($colors, "b"),1);
+                    }            
+                }
+            }
+            .nav-section-title-button:hover, .nav-section-title-button:focus { 
+                background-color: nth(map-get($colors, "e"),2); 
+            }
+            .nav-section-title-button:active { 
+                background-color: nth(map-get($colors, "a"),2); 
+            }
+        }
+        // ALL
+        .nav-panel-section-expand, .nav-panel-section-expand-link, .nav-panel-section-expand-link-tiles, .nav-panel-section-button, .nav-panel-section-expand-refresh-info {
+            .title-expanded {
+                background-color: transparent; 
+                color: nth(map-get($colors, "c"),1); 
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "c"),1);
+                    }            
+                }
+            }
+            .title-collapsed {
+                background-color: nth(map-get($colors, "d"),1); 
+                color: nth(map-get($colors, "b"),1); 
+                border-top: solid 1px nth(map-get($colors, "e"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "b"),1);
+                    }            
+                }
+            }
+            .title-collapsed:hover, .title-collapsed:focus {
+                background-color: nth(map-get($colors, "d"),2);                 
+            }
+            .title-expanded:active, .title-collapsed:active {
+                color: nth(map-get($colors, "bk"),1);
+                background-color: nth(map-get($colors, "a"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                    }
+                }
+            }
+        }
+        // EXPAND-LINK && EXPAND-LINK-TILES
+        .nav-panel-section-expand-link.expanded, .nav-panel-section-expand-link-tiles.expanded {
+            .nav-section-title-button {
+                background-color: transparent;
+                color: nth(map-get($colors, "c"),1); 
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "c"),1);
+                        stroke: nth(map-get($colors, "c"),1);
+                    }            
+                }
+            }
+            .nav-section-title-button:hover, .nav-section-title-button:focus {
+                background-color: nth(map-get($colors, "d"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "b"),1);
+                        stroke: nth(map-get($colors, "b"),1);
+                    }            
+                }
+            }
+            .nav-section-title-button:active {
+                background-color: nth(map-get($colors, "a"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                        stroke: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+        }
+        .nav-panel-section-expand-link.collapsed, .nav-panel-section-expand-link-tiles.collapsed {
+            .nav-section-title-button {
+                background-color: nth(map-get($colors, "d"),1);
+                color: nth(map-get($colors, "b"),1); 
+                border-top: solid 1px nth(map-get($colors, "e"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "b"),1);
+                        stroke: nth(map-get($colors, "b"),1);
+                    }            
+                }
+            }
+            .nav-section-title-button:hover, .nav-section-title-button:focus {
+                background-color: nth(map-get($colors, "d"),2);
+            }
+            .nav-section-title-button:active {
+                background-color: nth(map-get($colors, "a"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                        stroke: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+        }
+        // EXPAND-LINK-TILES
+        .nav-panel-section-expand-link-tiles {
+            .nav-panel-section-expand-link-tiles-title {
+            }
+            .nav-panel-section-expand-link-tiles-preview {
+                background-color: nth(map-get($colors, "d"),2); 
+                .tile-preview {
+                }
+            }     
+            .nav-panel-section-expand-link-tiles-content {}     
+        }
+        .nav-panel-section-expand-link-tiles.expanded {
+            .nav-panel-section-expand-link-tiles-preview {
+            }     
+        }
+        .nav-panel-section-expand-link-tiles.collapsed {
+            .nav-panel-section-expand-link-tiles-preview {
+            }     
+        }
+        // EXPAND-REFRESH-INFO
+        .nav-panel-section-expand-refresh-info {
+            .nav-section-title-info-button {
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "c"),1);
+                    }            
+                }
+            }
+        }
+        .nav-panel-section-expand-refresh-info.expanded {
+            .nav-section-title-info-button {
+                background-color: transparent;
+                color: nth(map-get($colors, "c"),1); 
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "c"),1);
+                    }            
+                }
+            }
+            .nav-section-title-info-button:hover,.nav-section-title-info-button:focus {
+                background-color: nth(map-get($colors, "d"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "b"),1);
+                    }            
+                }
+            }
+            .nav-section-title-info-button:active {
+                background-color: nth(map-get($colors, "a"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+            .nav-section-title-info {
+                background-color: transparent;
+                color: nth(map-get($colors, "c"),1); 
+            }
+        }
+        .nav-panel-section-expand-refresh-info.collapsed {
+            .nav-section-title-info-button {
+                background-color: nth(map-get($colors, "d"),1);
+                color: nth(map-get($colors, "b"),1); 
+                border-top: solid 1px nth(map-get($colors, "e"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "b"),1);
+                    }            
+                }
+            }
+            .nav-section-title-info-button:hover, .nav-section-title-info-button:focus {
+                background-color: nth(map-get($colors, "d"),2);
+            }
+            .nav-section-title-info-button:active {
+                background-color: nth(map-get($colors, "a"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+            .nav-section-title-info {
+                background-color: nth(map-get($colors, "b"),1);
+                color: nth(map-get($colors, "bk"),1); 
+                border-top: solid 1px nth(map-get($colors, "e"),1);
+            }
+        }
+    }
+
+    #foot-panel {
+        color: nth(map-get($colors, "bk"),1);
+        background-color: nth(map-get($colors, "c"),1);
+        width: 257px; min-height: 38px; position: absolute; bottom: 76px;
+        .nav-panel-section {
+            border-top: solid 1px nth(map-get($colors, "e"),1);
+            .nav-section-title {
+                background-color: nth(map-get($colors, "c"),1); 
+                color: nth(map-get($colors, "bk"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+            .nav-section-title:hover, .nav-section-title:focus {
+                background-color: nth(map-get($colors, "c"),2);                 
+            }
+            .nav-section-title:active {
+                background-color: nth(map-get($colors, "a"),2);                 
+            }
+            .nav-section-title {
+                .svg-inject.next {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                        stroke: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+            .nav-section-title-button {
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+            .nav-section-title-button:hover, .nav-section-title-button:focus { 
+                background-color: nth(map-get($colors, "c"),2);                 
+                .svg-inject {
+                    path {
+                        stroke: white;
+                    }
+                }
+            }
+            .nav-section-title-button:active { 
+                background-color: nth(map-get($colors, "a"),2);
+            }
+        }
+        .nav-panel-section-expand {
+            .nav-panel-section-expand-content {}
+        }
+        // EXPAND-LINK
+        .nav-panel-section-expand-link {
+            .nav-panel-section-expand-link-title {
+                width: calc(100% - 48px);
+            }
+            .nav-panel-section-expand-link-content {}     
+        }
+        // EXPAND-LINK-TILES
+        .nav-panel-section-expand-link-tiles {
+            .nav-panel-section-expand-link-tiles-title {
+            }
+            .nav-panel-section-expand-link-tiles-preview {
+                background-color: nth(map-get($colors, "c"),2); 
+                .tile-preview {
+                }
+            }     
+            .nav-panel-section-expand-link-tiles-content {}     
+        }
+        .nav-panel-section-expand-link-tiles.expanded {
+            .nav-panel-section-expand-link-tiles-preview {
+            }     
+        }
+        .nav-panel-section-expand-link-tiles.collapsed {
+            .nav-panel-section-expand-link-tiles-preview {
+            }     
+        }
+        // EXPAND-REFRESH-INFO
+        .nav-panel-section-expand-refresh-info {
+            .title-expanded {
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+            .title-collapsed {
+            }
+            .title-collapsed:hover, .title-collapsed:focus {
+                background-color: nth(map-get($colors, "c"),2);
+            }
+            .title-collapsed:active {
+                background-color: nth(map-get($colors, "a"),2);
+            }
+            .nav-section-title-info-button {
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+        }
+        .nav-panel-section-expand-refresh-info.expanded {
+            .nav-section-title-info-button {
+            }
+            .nav-section-title-info-button:hover, .nav-section-title-info-button:focus {
+                background-color: nth(map-get($colors, "c"),2);
+            }
+            .nav-section-title-info-button:active {
+                background-color: nth(map-get($colors, "a"),2);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+            .nav-section-title-info {
+                background-color:  nth(map-get($colors, "c"),1);
+            }
+        }
+        .nav-panel-section-expand-refresh-info.collapsed {
+            .nav-section-title-info-button {
+            }
+            .nav-section-title-info-button:hover, .nav-section-title-info-button:focus {
+                background-color: nth(map-get($colors, "c"),2);
+            }
+            .nav-section-title-info-button:active {
+                background-color: nth(map-get($colors, "a"),1);
+                .svg-inject {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+            .nav-section-title-info {
+                background-color: nth(map-get($colors, "b"),1);
+            }
+        }
+        // USER
         .nav-panel-section-user {
             @import 'user';
             .nav-panel-section-user-title {
-                background-color: $user-color !important;
+                background-color: nth($user-color, 1) !important;
             }
-            .nav-panel-section-user-content {}
+            .nav-panel-section-user-title:hover, .nav-panel-section-user-title:focus {
+                background-color: nth($user-color, 2) !important;
+            }
+            .nav-panel-section-user-content {
+                background-color: nth($user-color, 2) !important;
+            }
         }
     }
 }
