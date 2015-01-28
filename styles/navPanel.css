@@ -56,13 +56,14 @@ body {
       .nav-panel #main-panel .nav-panel-section .nav-section-title, .nav-panel #foot-panel .nav-panel-section .nav-section-title {
         min-height: 38px;
         line-height: 38px;
+        font-weight: bold;
         cursor: pointer;
         transition: all 1s;
         position: relative;
         text-decoration: none;
         display: block;
         padding-left: 10px; }
-        .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject, .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject {
+        .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject.expand, .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject.next, .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject.user, .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject.expand, .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject.next, .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject.user {
           position: absolute;
           top: 0;
           right: 0;
@@ -70,7 +71,19 @@ body {
           width: 22px;
           margin: 8px;
           transition: .4s; }
-          .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject path, .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject path {
+          .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject.expand path, .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject.next path, .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject.user path, .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject.expand path, .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject.next path, .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject.user path {
+            transition: .4s; }
+      .nav-panel #main-panel .nav-panel-section .nav-section-title.with-icon, .nav-panel #foot-panel .nav-panel-section .nav-section-title.with-icon {
+        padding-left: 40px; }
+        .nav-panel #main-panel .nav-panel-section .nav-section-title.with-icon .svg-inject.icon, .nav-panel #foot-panel .nav-panel-section .nav-section-title.with-icon .svg-inject.icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 22px;
+          width: 22px;
+          margin: 8px;
+          transition: .4s; }
+          .nav-panel #main-panel .nav-panel-section .nav-section-title.with-icon .svg-inject.icon path, .nav-panel #foot-panel .nav-panel-section .nav-section-title.with-icon .svg-inject.icon path {
             transition: .4s; }
       .nav-panel #main-panel .nav-panel-section .nav-section-title:hover .svg-inject.next, .nav-panel #main-panel .nav-panel-section .nav-section-title:focus .svg-inject.next, .nav-panel #foot-panel .nav-panel-section .nav-section-title:hover .svg-inject.next, .nav-panel #foot-panel .nav-panel-section .nav-section-title:focus .svg-inject.next {
         height: 26px;
@@ -80,6 +93,13 @@ body {
           stroke-width: 3; }
       .nav-panel #main-panel .nav-panel-section .nav-section-title:active .svg-inject.next, .nav-panel #foot-panel .nav-panel-section .nav-section-title:active .svg-inject.next {
         transform: translate(5px); }
+      .nav-panel #main-panel .nav-panel-section .nav-section-description, .nav-panel #foot-panel .nav-panel-section .nav-section-description {
+        min-height: 28px;
+        line-height: 28px;
+        font-size: 12px;
+        font-style: italic;
+        transition: all 1s;
+        padding-left: 10px; }
       .nav-panel #main-panel .nav-panel-section .nav-section-title-button, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button {
         height: 38px;
         width: 38px;
@@ -131,10 +151,6 @@ body {
         top: 0;
         right: 0;
         transition: 1s; }
-      .nav-panel #main-panel .nav-panel-section .title-expanded .svg-inject.expand, .nav-panel #foot-panel .nav-panel-section .title-expanded .svg-inject.expand {
-        transform: rotate(180deg); }
-      .nav-panel #main-panel .nav-panel-section .title-collapsed .svg-inject.expand, .nav-panel #foot-panel .nav-panel-section .title-collapsed .svg-inject.expand {
-        transform: rotate(0deg); }
     .nav-panel #main-panel .nav-panel-section-expand-link .nav-panel-section-expand-link-title, .nav-panel #foot-panel .nav-panel-section-expand-link .nav-panel-section-expand-link-title {
       width: calc(100% - 48px); }
     .nav-panel #main-panel .nav-panel-section-expand-link-tiles .nav-panel-section-expand-link-tiles-title, .nav-panel #foot-panel .nav-panel-section-expand-link-tiles .nav-panel-section-expand-link-tiles-title {
@@ -155,6 +171,16 @@ body {
       transform: rotate(360deg); }
     .nav-panel #main-panel .nav-panel-section .panel-content, .nav-panel #foot-panel .nav-panel-section .panel-content {
       padding: 10px; }
+    .nav-panel #main-panel .nav-panel-section-button .nav-section-title:active, .nav-panel #foot-panel .nav-panel-section-button .nav-section-title:active {
+      background-color: #2d2d29 !important;
+      color: #fff !important; }
+      .nav-panel #main-panel .nav-panel-section-button .nav-section-title:active .svg-inject.next path, .nav-panel #foot-panel .nav-panel-section-button .nav-section-title:active .svg-inject.next path {
+        fill: #fff;
+        stroke: #fff; }
+    .nav-panel #main-panel .nav-panel-section.expanded .nav-section-title .svg-inject.expand, .nav-panel #foot-panel .nav-panel-section.expanded .nav-section-title .svg-inject.expand {
+      transform: rotate(180deg); }
+    .nav-panel #main-panel .nav-panel-section.collapsed .nav-section-title .svg-inject.expand, .nav-panel #foot-panel .nav-panel-section.collapsed .nav-section-title .svg-inject.expand {
+      transform: rotate(0deg); }
   .nav-panel #main-panel .nav-panel-section .nav-section-title .svg-inject.next path {
     fill: #215a6d;
     stroke: #215a6d; }
@@ -162,24 +188,22 @@ body {
     background-color: #c0d9ce; }
   .nav-panel #main-panel .nav-panel-section .nav-section-title-button:active {
     background-color: #42423d; }
-  .nav-panel #main-panel .nav-panel-section-expand .title-expanded, .nav-panel #main-panel .nav-panel-section-expand-link .title-expanded, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-expanded, .nav-panel #main-panel .nav-panel-section-button .title-expanded, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-expanded {
+  .nav-panel #main-panel .nav-panel-section-expand.expanded .nav-section-title, .nav-panel #main-panel .nav-panel-section-expand.expanded .nav-section-description, .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title, .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-description, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-description, .nav-panel #main-panel .nav-panel-section-button.expanded .nav-section-title, .nav-panel #main-panel .nav-panel-section-button.expanded .nav-section-description, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-description {
     background-color: transparent;
     color: #3ca2a2; }
-    .nav-panel #main-panel .nav-panel-section-expand .title-expanded .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link .title-expanded .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-expanded .svg-inject path, .nav-panel #main-panel .nav-panel-section-button .title-expanded .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-expanded .svg-inject path {
+    .nav-panel #main-panel .nav-panel-section-expand.expanded .nav-section-title .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand.expanded .nav-section-description .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-description .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-description .svg-inject path, .nav-panel #main-panel .nav-panel-section-button.expanded .nav-section-title .svg-inject path, .nav-panel #main-panel .nav-panel-section-button.expanded .nav-section-description .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-description .svg-inject path {
       fill: #3ca2a2; }
-  .nav-panel #main-panel .nav-panel-section-expand .title-collapsed, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed, .nav-panel #main-panel .nav-panel-section-button .title-collapsed, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed {
-    background-color: #92c7a3;
-    color: #215a6d;
-    border-top: solid 1px #dfece6; }
-    .nav-panel #main-panel .nav-panel-section-expand .title-collapsed .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed .svg-inject path, .nav-panel #main-panel .nav-panel-section-button .title-collapsed .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed .svg-inject path {
-      fill: #215a6d; }
-  .nav-panel #main-panel .nav-panel-section-expand .title-collapsed:hover, .nav-panel #main-panel .nav-panel-section-expand .title-collapsed:focus, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed:hover, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed:focus, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed:hover, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed:focus, .nav-panel #main-panel .nav-panel-section-button .title-collapsed:hover, .nav-panel #main-panel .nav-panel-section-button .title-collapsed:focus, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed:hover, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed:focus {
+  .nav-panel #main-panel .nav-panel-section-expand.expanded .nav-section-title:hover, .nav-panel #main-panel .nav-panel-section-expand.expanded .nav-section-title:focus, .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title:hover, .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title:focus, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title:hover, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title:focus, .nav-panel #main-panel .nav-panel-section-button.expanded .nav-section-title:hover, .nav-panel #main-panel .nav-panel-section-button.expanded .nav-section-title:focus, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title:hover, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title:focus {
     background-color: #ade0bd; }
-  .nav-panel #main-panel .nav-panel-section-expand .title-expanded:active, .nav-panel #main-panel .nav-panel-section-expand .title-collapsed:active, .nav-panel #main-panel .nav-panel-section-expand-link .title-expanded:active, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed:active, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-expanded:active, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed:active, .nav-panel #main-panel .nav-panel-section-button .title-expanded:active, .nav-panel #main-panel .nav-panel-section-button .title-collapsed:active, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-expanded:active, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed:active {
-    color: #fff;
-    background-color: #2d2d29; }
-    .nav-panel #main-panel .nav-panel-section-expand .title-expanded:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand .title-collapsed:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link .title-expanded:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link .title-collapsed:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-expanded:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles .title-collapsed:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-button .title-expanded:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-button .title-collapsed:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-expanded:active .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info .title-collapsed:active .svg-inject path {
-      fill: #fff; }
+  .nav-panel #main-panel .nav-panel-section-expand.collapsed .nav-section-title, .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-title, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-title, .nav-panel #main-panel .nav-panel-section-button.collapsed .nav-section-title, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title {
+    border-top: solid 1px #dfece6; }
+  .nav-panel #main-panel .nav-panel-section-expand.collapsed .nav-section-title, .nav-panel #main-panel .nav-panel-section-expand.collapsed .nav-section-description, .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-title, .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-description, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-title, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-description, .nav-panel #main-panel .nav-panel-section-button.collapsed .nav-section-title, .nav-panel #main-panel .nav-panel-section-button.collapsed .nav-section-description, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-description {
+    background-color: #92c7a3;
+    color: #215a6d; }
+    .nav-panel #main-panel .nav-panel-section-expand.collapsed .nav-section-title .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand.collapsed .nav-section-description .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-title .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-description .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-title .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-description .svg-inject path, .nav-panel #main-panel .nav-panel-section-button.collapsed .nav-section-title .svg-inject path, .nav-panel #main-panel .nav-panel-section-button.collapsed .nav-section-description .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title .svg-inject path, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-description .svg-inject path {
+      fill: #215a6d; }
+  .nav-panel #main-panel .nav-panel-section-expand.collapsed .nav-section-title:hover, .nav-panel #main-panel .nav-panel-section-expand.collapsed .nav-section-title:focus, .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-title:hover, .nav-panel #main-panel .nav-panel-section-expand-link.collapsed .nav-section-title:focus, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-title:hover, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.collapsed .nav-section-title:focus, .nav-panel #main-panel .nav-panel-section-button.collapsed .nav-section-title:hover, .nav-panel #main-panel .nav-panel-section-button.collapsed .nav-section-title:focus, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title:hover, .nav-panel #main-panel .nav-panel-section-expand-refresh-info.collapsed .nav-section-title:focus {
+    background-color: #ade0bd; }
   .nav-panel #main-panel .nav-panel-section-expand-link.expanded .nav-section-title-button, .nav-panel #main-panel .nav-panel-section-expand-link-tiles.expanded .nav-section-title-button {
     background-color: transparent;
     color: #3ca2a2; }
@@ -262,8 +286,6 @@ body {
           fill: #fff; }
       .nav-panel #foot-panel .nav-panel-section .nav-section-title:hover, .nav-panel #foot-panel .nav-panel-section .nav-section-title:focus {
         background-color: #48baba; }
-      .nav-panel #foot-panel .nav-panel-section .nav-section-title:active {
-        background-color: #42423d; }
       .nav-panel #foot-panel .nav-panel-section .nav-section-title .svg-inject.next path {
         fill: #fff;
         stroke: #fff; }
@@ -274,17 +296,11 @@ body {
         .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:hover .svg-inject path, .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:focus .svg-inject path {
           stroke: white; }
       .nav-panel #foot-panel .nav-panel-section .nav-section-title-button:active {
-        background-color: #42423d; }
+        background-color: #2d2d29; }
     .nav-panel #foot-panel .nav-panel-section-expand-link .nav-panel-section-expand-link-title {
       width: calc(100% - 48px); }
     .nav-panel #foot-panel .nav-panel-section-expand-link-tiles .nav-panel-section-expand-link-tiles-preview {
       background-color: #48baba; }
-    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .title-expanded .svg-inject path {
-      fill: #fff; }
-    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .title-collapsed:hover, .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .title-collapsed:focus {
-      background-color: #48baba; }
-    .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .title-collapsed:active {
-      background-color: #42423d; }
     .nav-panel #foot-panel .nav-panel-section-expand-refresh-info .nav-section-title-info-button .svg-inject path {
       fill: #fff; }
     .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:hover, .nav-panel #foot-panel .nav-panel-section-expand-refresh-info.expanded .nav-section-title-info-button:focus {
@@ -307,6 +323,8 @@ body {
       background-color: #73185E !important; }
     .nav-panel #foot-panel .nav-panel-section-user .nav-panel-section-user-title:hover, .nav-panel #foot-panel .nav-panel-section-user .nav-panel-section-user-title:focus {
       background-color: #932b7b !important; }
+    .nav-panel #foot-panel .nav-panel-section-user .nav-section-description {
+      background-color: #73185E !important; }
     .nav-panel #foot-panel .nav-panel-section-user .nav-panel-section-user-content {
       background-color: #932b7b !important; }
 

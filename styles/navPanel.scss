@@ -51,16 +51,32 @@
             .nav-section-title {
                 min-height: 38px;
                 line-height: 38px; 
+                font-weight: bold;
                 cursor: pointer; 
                 transition: all 1s;
                 position: relative;
                 text-decoration: none;
                 display: block;
                 padding-left: 10px;
-                .svg-inject {
+                .svg-inject.expand, .svg-inject.next, .svg-inject.user {
                     position: absolute;
                     top: 0;
                     right: 0;
+                    height: 22px;
+                    width: 22px;
+                    margin: 8px;
+                    transition: .4s;
+                    path {
+                        transition: .4s;
+                    }            
+                }
+            }
+            .nav-section-title.with-icon {
+                padding-left: 40px;
+                .svg-inject.icon {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                     height: 22px;
                     width: 22px;
                     margin: 8px;
@@ -84,6 +100,14 @@
                 .svg-inject.next {
                     transform: translate(5px);
                 }
+            }
+            .nav-section-description {
+                min-height: 28px;
+                line-height: 28px;
+                font-size: 12px;
+                font-style: italic;
+                transition: all 1s;
+                padding-left: 10px;
             }
             .nav-section-title-button {
                 height: 38px; 
@@ -156,16 +180,6 @@
             }
             .nav-section-title-info:hover { 
             }
-            .title-expanded {
-                .svg-inject.expand {
-                    transform: rotate(180deg);
-                }
-            }
-            .title-collapsed {
-                .svg-inject.expand {
-                    transform: rotate(0deg);
-                }
-            }
         }
         .nav-panel-section-expand {
             .nav-panel-section-expand-content {}
@@ -213,16 +227,37 @@
         .nav-panel-section .panel-content {
             padding: 10px;
         }
+        // BUTTON
+        .nav-panel-section-button {
+            .nav-section-title:active { 
+                background-color: nth(map-get($colors, "a"),1) !important;
+                color: nth(map-get($colors, "bk"),1) !important;
+                .svg-inject.next {
+                    path {
+                        fill: nth(map-get($colors, "bk"),1);
+                        stroke: nth(map-get($colors, "bk"),1);
+                    }            
+                }
+            }
+        }
+        .nav-panel-section.expanded {
+            .nav-section-title{
+                .svg-inject.expand {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .nav-panel-section.collapsed {
+            .nav-section-title{
+                .svg-inject.expand {
+                    transform: rotate(0deg);
+                }
+            }
+        }
     }
 
     #main-panel {
         .nav-panel-section {
-            .nav-section-title {
-                .svg-inject {
-                    path {
-                    }            
-                }
-            }
             .nav-section-title {
                 .svg-inject.next {
                     path {
@@ -239,8 +274,8 @@
             }
         }
         // ALL
-        .nav-panel-section-expand, .nav-panel-section-expand-link, .nav-panel-section-expand-link-tiles, .nav-panel-section-button, .nav-panel-section-expand-refresh-info {
-            .title-expanded {
+        .nav-panel-section-expand.expanded, .nav-panel-section-expand-link.expanded, .nav-panel-section-expand-link-tiles.expanded, .nav-panel-section-button.expanded, .nav-panel-section-expand-refresh-info.expanded {
+            .nav-section-title, .nav-section-description {
                 background-color: transparent; 
                 color: nth(map-get($colors, "c"),1); 
                 .svg-inject {
@@ -249,27 +284,25 @@
                     }            
                 }
             }
-            .title-collapsed {
+            .nav-section-title:hover, .nav-section-title:focus {
+                background-color: nth(map-get($colors, "d"),2);                 
+            }
+        }
+        .nav-panel-section-expand.collapsed, .nav-panel-section-expand-link.collapsed, .nav-panel-section-expand-link-tiles.collapsed, .nav-panel-section-button.collapsed, .nav-panel-section-expand-refresh-info.collapsed {
+            .nav-section-title {
+                border-top: solid 1px nth(map-get($colors, "e"),1);
+            }
+            .nav-section-title, .nav-section-description {
                 background-color: nth(map-get($colors, "d"),1); 
                 color: nth(map-get($colors, "b"),1); 
-                border-top: solid 1px nth(map-get($colors, "e"),1);
                 .svg-inject {
                     path {
                         fill: nth(map-get($colors, "b"),1);
                     }            
                 }
             }
-            .title-collapsed:hover, .title-collapsed:focus {
+            .nav-section-title:hover, .nav-section-title:focus {
                 background-color: nth(map-get($colors, "d"),2);                 
-            }
-            .title-expanded:active, .title-collapsed:active {
-                color: nth(map-get($colors, "bk"),1);
-                background-color: nth(map-get($colors, "a"),1);
-                .svg-inject {
-                    path {
-                        fill: nth(map-get($colors, "bk"),1);
-                    }
-                }
             }
         }
         // EXPAND-LINK && EXPAND-LINK-TILES
@@ -436,9 +469,6 @@
             .nav-section-title:hover, .nav-section-title:focus {
                 background-color: nth(map-get($colors, "c"),2);                 
             }
-            .nav-section-title:active {
-                background-color: nth(map-get($colors, "a"),2);                 
-            }
             .nav-section-title {
                 .svg-inject.next {
                     path {
@@ -463,7 +493,7 @@
                 }
             }
             .nav-section-title-button:active { 
-                background-color: nth(map-get($colors, "a"),2);
+                background-color: nth(map-get($colors, "a"),1);
             }
         }
         .nav-panel-section-expand {
@@ -497,21 +527,6 @@
         }
         // EXPAND-REFRESH-INFO
         .nav-panel-section-expand-refresh-info {
-            .title-expanded {
-                .svg-inject {
-                    path {
-                        fill: nth(map-get($colors, "bk"),1);
-                    }            
-                }
-            }
-            .title-collapsed {
-            }
-            .title-collapsed:hover, .title-collapsed:focus {
-                background-color: nth(map-get($colors, "c"),2);
-            }
-            .title-collapsed:active {
-                background-color: nth(map-get($colors, "a"),2);
-            }
             .nav-section-title-info-button {
                 .svg-inject {
                     path {
@@ -564,6 +579,9 @@
             }
             .nav-panel-section-user-title:hover, .nav-panel-section-user-title:focus {
                 background-color: nth($user-color, 2) !important;
+            }
+            .nav-section-description {
+                background-color: nth($user-color, 1) !important;
             }
             .nav-panel-section-user-content {
                 background-color: nth($user-color, 2) !important;

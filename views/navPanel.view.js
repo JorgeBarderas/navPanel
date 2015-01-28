@@ -2,20 +2,25 @@
 window.JST = {};
 
 window.JST['nav/section/expand'] = _.template(
-      "<a href='#' class='nav-section-title nav-panel-section-<%= type %>-title'><%= title %><img src='img/expand.svg' class='svg-inject expand' /></a>"+
-      "<div class='nav-panel-section-<%= type %>-content panel-content'>"+
-      "</div>" 
+      "<a href='#' class='nav-section-title nav-panel-section-<%= type %>-title <% if (typeof icon != 'undefined' && icon != '') { %>with-icon<% } %>'>"+
+        "<% if (typeof icon != 'undefined' && icon != '') { %><img src='<%= icon %>' class='svg-inject icon' /><% } %>"+
+        "<%= title %>"+
+        "<img src='img/expand.svg' class='svg-inject expand' />"+
+      "</a>"+
+      "<div class='nav-section-description'><%= description %></div>"+
+      "<div class='nav-panel-section-<%= type %>-content panel-content'></div>"
 );
 window.JST['nav/section/button'] = _.template(
-      "<a href='#' class='nav-section-title nav-panel-section-<%= type %>-title'><%= title %><img src='img/next.svg' class='svg-inject next' /></a>"
+      "<a href='#' class='nav-section-title nav-panel-section-<%= type %>-title'><%= title %><img src='img/next.svg' class='svg-inject next' /></a>"+
+      "<div class='nav-section-description'><%= description %></div>"
 );
 window.JST['nav/section/expand-link'] = _.template(
       "<a href='#' class='nav-section-title nav-panel-section-<%= type %>-title'><%= title %>"+
         "<img src='img/expand.svg' class='svg-inject expand' />"+
       "</a>"+
       "<a href='#' class='nav-section-title-button'><img src='img/next.svg' class='svg-inject link' /></a>"+
-      "<div class='nav-panel-section-<%= type %>-content panel-content'>"+
-      "</div>" 
+      "<div class='nav-section-description'><%= description %></div>"+
+      "<div class='nav-panel-section-<%= type %>-content panel-content'></div>" 
 );
 window.JST['nav/section/expand-refresh-info'] = _.template(
       "<a href='#' class='nav-section-title nav-panel-section-<%= type %>-title'><%= title %>"+
@@ -23,22 +28,22 @@ window.JST['nav/section/expand-refresh-info'] = _.template(
       "</a>"+
       "<a href='#' class='nav-section-title-info-button'><img src='img/refresh.svg' class='svg-inject refresh' /></a>"+
       "<div class='nav-section-title-info'>23</div>"+
-      "<div class='nav-panel-section-<%= type %>-content panel-content'>"+
-      "</div>" 
+      "<div class='nav-section-description'><%= description %></div>"+
+      "<div class='nav-panel-section-<%= type %>-content panel-content'></div>" 
 );
 window.JST['nav/section/expand-link-tiles'] = _.template(
       "<a href='#' class='nav-section-title nav-panel-section-<%= type %>-title'><%= title %>"+
         "<img src='img/expand.svg' class='svg-inject expand' />"+
       "</a>"+
       "<a href='#' class='nav-section-title-button'><img src='img/next.svg' class='svg-inject link' /></a>"+
+      "<div class='nav-section-description'><%= description %></div>"+
       "<div class='nav-panel-section-<%= type %>-preview'></div>"+
-      "<div class='nav-panel-section-<%= type %>-content panel-content'>"+
-      "</div>" 
+      "<div class='nav-panel-section-<%= type %>-content panel-content'></div>" 
 );
 window.JST['nav/section/user'] = _.template(
       "<a href='#' class='nav-section-title nav-panel-section-<%= type %>-title'><%= title %><img src='img/user.svg' class='svg-inject user' /></a>"+
-      "<div class='nav-panel-section-<%= type %>-content panel-content'>"+
-      "</div>" 
+      "<div class='nav-section-description'><%= description %></div>"+
+      "<div class='nav-panel-section-<%= type %>-content panel-content'></div>" 
 );
 
 
@@ -120,11 +125,15 @@ var NAVsection_view = Backbone.View.extend({
 
   render: function() {
     var view = this;
+    if (view.model.get("description") === undefined) {view.model.set("description", "")}
     view.$el
       .attr("id", view.model.get("code"))
       .addClass("nav-panel-section")
       .addClass("nav-panel-section-" + view.model.get("type"))
       .append(window.JST['nav/section/'+view.model.get("type")](view.model.attributes));
+    if (view.model.get("description") == "") {
+      view.$(".nav-section-description").hide();
+    }
     if (view.$content.length > 0) {
       view.$content.appendTo(view.$el.find(".nav-panel-section-"+view.model.get("type")+"-content"));
     } else {
@@ -133,11 +142,9 @@ var NAVsection_view = Backbone.View.extend({
 
     if (view.collapsed) {
       view.$el.addClass("collapsed").removeClass("expanded");
-      view.$(".nav-panel-section-"+view.model.get("type")+"-title").addClass("title-collapsed");
       view.$(".nav-panel-section-"+view.model.get("type")+"-content").hide();
     } else {
       view.$el.addClass("expanded").removeClass("collapsed");
-      view.$(".nav-panel-section-"+view.model.get("type")+"-title").addClass("title-expanded");
       view.$(".nav-panel-section-"+view.model.get("type")+"-content").show();
     }
     return this;
@@ -149,10 +156,8 @@ var NAVsection_view = Backbone.View.extend({
     view.$(".nav-panel-section-"+view.model.get("type")+"-content").slideToggle(function() {$(window).resize();});
     if (hidden) {
       view.$el.addClass("expanded").removeClass("collapsed");
-      view.$(".nav-panel-section-"+view.model.get("type")+"-title").removeClass("title-collapsed").addClass("title-expanded");
     } else {
       view.$el.addClass("collapsed").removeClass("expanded");
-      view.$(".nav-panel-section-"+view.model.get("type")+"-title").removeClass("title-expanded").addClass("title-collapsed");
     }
   }
 

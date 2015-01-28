@@ -13,8 +13,8 @@
     <script type="text/javascript">
         $(document).ready(function() {
             var main_sections = new NP_sections_collection([
-                {code: 'content', type: 'expand', title: 'Content', description: 'Content tree', id_content: 'tree-content'},
-                {code: 'reports', type: 'expand', title: 'Reports', description: 'Reports', id_content: 'reports-content'},
+                {code: 'content', type: 'expand', title: 'Content', description: '', id_content: 'tree-content'},
+                {code: 'reports', type: 'expand', title: 'Reports', id_content: 'reports-content', icon: './img/star.svg'},
                 {code: 'tasks', type: 'expand-refresh-info', title: 'Tasks', description: 'Workflow tasks', id_content: 'tasks-content'}
             ]);
             custom.init_main_sections(main_sections);
